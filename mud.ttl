@@ -1,0 +1,104 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix mud: <#> .
+
+mud: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Multi-User Domain ontology" ;
+    dcterms:description """
+    Includes definitions for Things relating to Multi-User Domains
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
+mud:Organization a rdfs:Class ;
+    rdfs:subClassOf foaf:Organization ;
+    rdfs:label "Organization"@en ;
+    rdfs:label "Organisation"@fr .
+
+mud:Locatable a rdfs:Class ;
+    rdfs:label "Locatable Place"@en ;
+    rdfs:comment "A parent class for all classes in which a Party can be"@en .
+
+mud:Settlement a mud:Locatable ;
+    rdfs:subClassOf mud:Locatable ;
+    rdfs:label "Settlement"@en ;
+    rdfs:label "Ville"@fr .
+
+mud:Building a mud:Locatable ;
+    rdfs:subClassOf mud:Locatable ;
+    rdfs:label "Building"@en ;
+    rdfs:label "Bâtiment"@fr .
+
+mud:Party a rdfs:Class ;
+    rdfs:subclassOf foaf:Group ;
+    rdfs:label "Party"@en ;
+    rdfs:comment "A Group of characters in a single unit, in the same physical location"@en .
+
+mud:Character a rdfs:Class ;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:label "Character"@en ;
+    rdfs:label "Personnage"@fr .
+
+# TODO: for Party/Character locations this is fine (because it can be vague), but for possessions it won't be
+mud:locatedAt a rdf:Property ;
+    rdfs:label "locatedAt"@en ;
+    rdfs:comment "The location of a thing, in a mud:Locatable"@en ;
+    rdfs:domain mud:Locatable .
+
+# TODO: add constraint that you can have *only one* mainParty
+mud:mainParty a rdf:Property ;
+    rdfs:label "mainParty"@en ;
+    rdfs:comment "In FOAF an agent can have many groups, but in MUD we can have only one mainParty"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range mud:Party .
+
+mud:hasBuilding a rdf:Property ;
+    rdfs:label "hasBuilding"@en ;
+    rdfs:comment "A Building in a Settlement."@en ;
+    rdfs:comment "Une Bâtiment dans une Ville."@fr ;
+    rdfs:domain mud:Settlement ;
+    rdfs:range mud:Building .
+
+mud:primaryTextContent a rdf:Property ;
+    rdfs:label "Primary Text Content"@en ;
+    rdfs:comment "The default text description of an object"@en ;
+    rdfs:domain owl:Thing .
+
+mud:primaryImageContent a foaf:depiction ;
+    rdfs:label "Primary Image Content"@en ;
+    rdfs:comment "The default depiction of a Thing"@en ;
+    rdfs:domain owl:Thing .
+
+mud:population a rdf:Property ;
+    rdfs:label "Population"@en ;
+    rdfs:label "Population"@fr ;
+    rdfs:comment "The number of people residing in a settlement."@en ;
+    rdfs:comment "Le nombre de personnes résidant dans une ville."@fr ;
+    rdfs:domain mud:Settlement ;
+    rdfs:range xsd:integer .
+
+mud:ownedBy a rdf:Property ;
+    rdfs:label "owned by"@en ;
+    rdfs:label "appartenant de"@fr ;
+    rdfs:domain mud:Character, mud:Building ;
+    rdfs:range foaf:Agent .
+
+mud:Account a foaf:OnlineGamingAccount .
+
+# TODO: make CharactersList a rdfs:List and replace string link to collection
+
+mud:CharacterList a rdf:Property ;
+    rdfs:label "characters list"@en ;
+    rdfs:label "liste de personnages"@fr ;
+    rdfs:comment "a list of the Characters owned by an associated Account"@en ;
+    rdfs:comment "une liste de personnages appartenant à un compte"@fr ;
+    rdfs:domain mud:Account ;
+    rdfs:range xsd:string .

@@ -1,0 +1,28 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix mud: <https://calum.inrupt.net/public/voc/mud.ttl#> .
+
+@prefix mudbuildings: <#> .
+
+mudbuildings: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Multi-User Domain Buildings ontology" ;
+    dcterms:description """
+    Defines a core library of mud:Building subclasses and properties
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
+mudbuildings:Stadium a mud:Building ;
+    rdfs:label "Stadium"@en ;
+    rdfs:label "Stade"@fr .
+
+mudbuildings:Nightclub a mud:Building ;
+    rdfs:label "Nightclub"@en ;
+    rdfs:label "Boite"@fr .

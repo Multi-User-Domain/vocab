@@ -1,0 +1,36 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix mud: <https://calum.inrupt.net/public/voc/mud.ttl#> .
+@prefix mudbuildings: <https://calum.inrupt.net/public/voc/mudbuildings.ttl#> .
+
+@prefix mudevents: <#> .
+
+mudevents: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Multi-User Domain Events ontology" ;
+    dcterms:description """
+    Extends the time ontology to add additional classes and properties pertaining to Events in MUD applications
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
+# TODO: replace with time:Interval as the base class?
+mudevents:Event a time:Interval ;
+    rdfs:label "Event"@en ;
+    rdfs:comment "A generic event staged for a specified duration"@en .
+
+mudevents:hasEvent a rdf:Property ;
+    rdfs:label "An event at a building"@en ;
+    rdfs:comment "An Event attached to a mud:Building object"@en ;
+    rdfs:domain mud:Building ;
+    rdfs:range mudbuildings:Event .
+
+mudevents:FootballMatch a mudevents:Event ;
+    rdfs:label "Football Match"@en ;
+    rdfs:comment "A game of football (soccer)"@en .

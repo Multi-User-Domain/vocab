@@ -1,0 +1,32 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix mud: <https://calum.inrupt.net/public/voc/mud.ttl#> .
+
+@prefix mudlogic: <#> .
+
+mudlogic:Action a time:Instant ;
+    rdfs:subClassOf time:Instant ;
+    rdfs:label "Action"@en ;
+    rdfs:comment "An Instant Action - one which is completed by an Actor to achieve some end state"@en .
+
+mudlogic:Task a time:Interval ;
+    rdfs:subClassOf time:Interval ;
+    rdfs:label "Task"@en ;
+    rdfs:comment "An Interval which is being completed by an Actor to achieve some end state"@en .
+
+mudlogic:Transit a mudlogic:Task ;
+    rdfs:subclassOf mudlogic:Task ;
+    rdfs:label "Transit Task"@en ;
+    rdfs:comment "A Task which models the changing of location"@en .
+
+mudlogic:endState a rdf:Property ;
+    rdfs:label "End State"@en ;
+    rdfs:comment "Models changes to be made in RDF which represent the end state of some task"@en ;
+    rdfs:range solid:Patch .
