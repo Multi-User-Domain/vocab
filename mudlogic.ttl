@@ -5,7 +5,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+# @prefix solid: <http://www.w3.org/ns/solid/terms#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
 @prefix mud: <https://calum.inrupt.net/public/voc/mud.ttl#> .
 
@@ -26,7 +26,21 @@ mudlogic:Transit a mudlogic:Task ;
     rdfs:label "Transit Task"@en ;
     rdfs:comment "A Task which models the changing of location"@en .
 
+# NOTE: this is a (temporary?) replacement for solid:Patch as we cannot easily serve N3 via Apache Jena
+# see https://github.com/Multi-User-Domain/mud-jena/issues/3#issuecomment-775049366
+mudlogic:Patch a rdfs:Class ;
+    rdfs:label "Patch"@en ;
+    rdfs:comment "Attaches resources (via properties inserts and deletes) to be PATCHed during a state change. During a PATCH the referenced resources are not replaced"@en .
+
+mudlogic:inserts a rdf:Property ;
+    rdfs:label "Inserts"@en ;
+    rdfs:comment "A pointer to (clone of a) Resource holding properties which should be inserted to a Graph during the change"@en .
+
+mudlogic:deletes a rdf:Property ;
+    rdfs:label "Deletes"@en ;
+    rdfs:comment "A pointer to a (clone of a) Resource holding properties which should be deleted in a Graph during the change"@en .
+
 mudlogic:endState a rdf:Property ;
     rdfs:label "End State"@en ;
     rdfs:comment "Models changes to be made in RDF which represent the end state of some task"@en ;
-    rdfs:range solid:Patch .
+    rdfs:range mudlogic:Patch .
