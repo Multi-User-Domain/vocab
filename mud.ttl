@@ -102,3 +102,12 @@ mud:CharacterList a rdf:Property ;
     rdfs:comment "une liste de personnages appartenant à un compte"@fr ;
     rdfs:domain mud:Account ;
     rdfs:range xsd:string .
+
+mud:senses a rdfs:Class ;
+    rdfs:label "Senses"@en ;
+    rdfs:comment "The senses of a moment in time"@en ;
+
+mud:sight a rdfs:Property
+    rdfs:label "Sight"@en ;
+    rdfs:comment "The visual sense"@en ;
+    rdfs:domain mud:senses
