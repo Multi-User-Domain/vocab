@@ -110,4 +110,4 @@ mud:content a rdfs:Class ;
 mud:sight a rdfs:Property
     rdfs:label "Sight"@en ;
     rdfs:comment "The visual sense"@en ;
-    rdfs:domain mud:senses
+    rdfs:domain mud:content
