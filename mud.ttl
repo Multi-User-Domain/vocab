@@ -103,9 +103,9 @@ mud:CharacterList a rdf:Property ;
     rdfs:domain mud:Account ;
     rdfs:range xsd:string .
 
-mud:senses a rdfs:Class ;
-    rdfs:label "Senses"@en ;
-    rdfs:comment "The senses of a moment in time"@en ;
+mud:content a rdfs:Class ;
+    rdfs:label "Textual Content"@en ;
+    rdfs:comment "Content describing another model"@en ;
 
 mud:sight a rdfs:Property
     rdfs:label "Sight"@en ;
