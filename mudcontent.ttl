@@ -17,7 +17,7 @@ mudcontent: rdf:type owl:Ontology ;
 
 mudcontent:content a rdfs:Class ;
   rdfs:label "Textual Content"@en ;
-  rdfs:comment "Content describing another model"@en ;
+  rdfs:comment "Content describing another model"@en .
 
 mudcontent:sight a rdfs:Property
   rdfs:label "Sight"@en ;
