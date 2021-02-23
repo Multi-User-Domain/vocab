@@ -1,4 +1,8 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 @prefix mudcontent: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#> .
 
 mudcontent: rdf:type owl:Ontology ;
@@ -18,4 +22,4 @@ mudcontent:content a rdfs:Class ;
 mudcontent:sight a rdfs:Property
   rdfs:label "Sight"@en ;
   rdfs:comment "The visual sense"@en ;
-  rdfs:domain mud:content
+  rdfs:domain mud:content .
