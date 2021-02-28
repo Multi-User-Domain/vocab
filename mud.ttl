@@ -16,7 +16,8 @@ mud: rdf:type owl:Ontology ;
     """ ;
     # Ownership
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> ;
+    dcterms:contributor <https://matttennison.inrupt.net/profile/card#me> .
 
 mud:Organization a rdfs:Class ;
     rdfs:subClassOf foaf:Organization ;
@@ -36,29 +37,6 @@ mud:Building a mud:Locatable ;
     rdfs:subClassOf mud:Locatable ;
     rdfs:label "Building"@en ;
     rdfs:label "Bâtiment"@fr .
-
-mud:Party a rdfs:Class ;
-    rdfs:subclassOf foaf:Group ;
-    rdfs:label "Party"@en ;
-    rdfs:comment "A Group of characters in a single unit, in the same physical location"@en .
-
-mud:Character a rdfs:Class ;
-    rdfs:subClassOf foaf:Person ;
-    rdfs:label "Character"@en ;
-    rdfs:label "Personnage"@fr .
-
-# TODO: for Party/Character locations this is fine (because it can be vague), but for possessions it won't be
-mud:locatedAt a rdf:Property ;
-    rdfs:label "locatedAt"@en ;
-    rdfs:comment "The location of a thing, in a mud:Locatable"@en ;
-    rdfs:domain mud:Locatable .
-
-# TODO: add constraint that you can have *only one* mainParty
-mud:mainParty a rdf:Property ;
-    rdfs:label "mainParty"@en ;
-    rdfs:comment "In FOAF an agent can have many groups, but in MUD we can have only one mainParty"@en ;
-    rdfs:domain foaf:Person ;
-    rdfs:range mud:Party .
 
 mud:hasBuilding a rdf:Property ;
     rdfs:label "hasBuilding"@en ;
