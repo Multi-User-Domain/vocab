@@ -35,12 +35,6 @@ mudchar:hasTask a rdf:Property ;
     rdfs:comment "a mudlogic:Task that a Thing is pre-occupied with" ;
     rdfs:range mudlogic:Task .
 
-# TODO: for Party/Character locations this is fine (because it can be vague), but for possessions it won't be
-mudchar:locatedAt a rdf:Property ;
-    rdfs:label "locatedAt"@en ;
-    rdfs:comment "The location of a thing, in a mud:Locatable"@en ;
-    rdfs:domain mud:Locatable .
-
 # TODO: add constraint that you can have *only one* mainParty
 # NOTE: currently unused
 mudchar:mainParty a rdf:Property ;

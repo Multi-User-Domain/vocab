@@ -69,6 +69,12 @@ mud:ownedBy a rdf:Property ;
     rdfs:domain mud:Character, mud:Building ;
     rdfs:range foaf:Agent .
 
+# TODO: for Party/Character locations this is fine (because it can be vague), but for possessions it won't be
+mud:locatedAt a rdf:Property ;
+    rdfs:label "locatedAt"@en ;
+    rdfs:comment "The location of a thing, in a mud:Locatable"@en ;
+    rdfs:domain mud:Locatable .
+
 mud:Account a foaf:OnlineGamingAccount .
 
 # TODO: make CharactersList a rdfs:List and replace string link to collection
