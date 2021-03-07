@@ -20,9 +20,11 @@ mudbuildings: rdf:type owl:Ontology ;
     dcterms:creator <https://calum.inrupt.net/profile/card#me> .
 
 mudbuildings:Stadium a mud:Building ;
+    rdfs:subClassOf mud:Building ;
     rdfs:label "Stadium"@en ;
     rdfs:label "Stade"@fr .
 
 mudbuildings:Nightclub a mud:Building ;
+    rdfs:subClassOf mud:Building ;
     rdfs:label "Nightclub"@en ;
     rdfs:label "Boite"@fr .
