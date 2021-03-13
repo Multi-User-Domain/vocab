@@ -7,7 +7,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 # @prefix solid: <http://www.w3.org/ns/solid/terms#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix mud: <https://calum.inrupt.net/public/voc/mud.ttl#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 
 @prefix mudlogic: <#> .
 

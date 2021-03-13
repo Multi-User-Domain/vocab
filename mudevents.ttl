@@ -5,8 +5,8 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix mud: <https://calum.inrupt.net/public/voc/mud.ttl#> .
-@prefix mudbuildings: <https://calum.inrupt.net/public/voc/mudbuildings.ttl#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+@prefix mudbuildings: <hhttps://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudbuildings.ttl#> .
 
 @prefix mudevents: <#> .
 

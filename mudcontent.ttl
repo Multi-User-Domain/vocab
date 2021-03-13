@@ -3,7 +3,8 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
-@prefix mudcontent: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#> .
+
+@prefix mudcontent: <#> .
 
 mudcontent: rdf:type owl:Ontology ;
     # Description
@@ -13,7 +14,8 @@ mudcontent: rdf:type owl:Ontology ;
     """ ;
     # Ownership
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:creator <https://matttennison.inrupt.net/profile/card#me> .
+    dcterms:creator <https://matttennison.inrupt.net/profile/card#me> ;
+    dcterms:contributor <https://calum.inrupt.net/profile/card#me> .
 
 mudcontent:content a rdfs:Class ;
   rdfs:label "Textual Content"@en ;
