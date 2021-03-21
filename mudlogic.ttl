@@ -32,6 +32,12 @@ mudlogic:Patch a rdfs:Class ;
     rdfs:label "Patch"@en ;
     rdfs:comment "Attaches resources (via properties inserts and deletes) to be PATCHed during a state change. During a PATCH the referenced resources are not replaced"@en .
 
+mudlogic:isComplete a rdf:Property ;
+    rdfs:label "isComplete"@en ;
+    rdfs:comment "If True, the task completion conditions have been met and the task has been completed"@en ;
+    rdfs:domain mudlogic:Task ;
+    rdfs:range xsd:boolean .
+
 mudlogic:inserts a rdf:Property ;
     rdfs:label "Inserts"@en ;
     rdfs:comment "A pointer to (clone of a) Resource holding properties which should be inserted to a Graph during the change"@en .
