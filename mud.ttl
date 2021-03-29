@@ -48,7 +48,8 @@ mud:hasBuilding a rdf:Property ;
 mud:primaryTextContent a rdf:Property ;
     rdfs:label "Primary Text Content"@en ;
     rdfs:comment "The default text description of an object"@en ;
-    rdfs:domain owl:Thing .
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
 
 mud:primaryImageContent a foaf:depiction ;
     rdfs:label "Primary Image Content"@en ;
