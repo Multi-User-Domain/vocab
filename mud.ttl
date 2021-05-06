@@ -29,6 +29,12 @@ mud:worldEndpoint a rdf:Property ;
     rdfs:domain mud:Configuration ;
     rdfs:range schema:URL .
 
+mud:sceneGenerationEndpoint a rdf:Property ;
+    rdfs:label "sceneGenerationEndpoint"@en ;
+    rdfs:comment "The URL where a supported MUD Scene Generation endpoint can be found"@en ;
+    rdfs:domain mud:Configuration ;
+    rdfs:range schema:URL .
+
 mud:Organization a rdfs:Class ;
     rdfs:subClassOf foaf:Organization ;
     rdfs:label "Organization"@en ;
