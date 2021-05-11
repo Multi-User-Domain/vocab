@@ -24,6 +24,20 @@ mudcontent:Content a rdfs:Class ;
   rdfs:label "Content"@en ;
   rdfs:comment "Holds properties for content to render with the object it describes"@en .
 
+mudcontent:Sense a rdfs:Class ;
+  rdfs:label "Sense"@en ;
+  rdfs:comment "The faculty with which an Actor perceives something"@en.
+
+mudcontent:Sight a mudcontent:Sense ;
+  rdfs:label "Sight"@en ;
+  rdfs:comment "The visual sense" @en ;
+  rdfs:subClassOf mudcontent:Sense .
+
+mudcontent:usesSense a rdf:Property ;
+  rdfs:label "usesSense"@en ;
+  rdfs:comment "Implies that the subject (Content) uses this Sense"@en ;
+  rdfs:range mudcontent:Sense .
+
 mudcontent:sees a rdf:Property ;
   rdfs:label "Sees"@en ;
   rdfs:comment "The visual sense of an Agent"@en ;
