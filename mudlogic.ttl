@@ -27,6 +27,12 @@ mudlogic:Transit a mudlogic:Task ;
     rdfs:label "Transit Task"@en ;
     rdfs:comment "A Task which models the changing of location"@en .
 
+mudlogic:actAt a rdf:Property ;
+    rdfs:label "actAt"@en ;
+    rdfs:comment "The URL where the Action can be found"@en ;
+    rdfs:domain mudlogic:Action, mudlogic:Task ;
+    rdfs:range schema:URL .
+
 # NOTE: this is a (temporary?) replacement for solid:Patch as we cannot easily serve N3 via Apache Jena
 # see https://github.com/Multi-User-Domain/mud-jena/issues/3#issuecomment-775049366
 mudlogic:Patch a rdfs:Class ;
