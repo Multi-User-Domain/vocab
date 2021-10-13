@@ -33,6 +33,12 @@ mudlogic:actAt a rdf:Property ;
     rdfs:domain mudlogic:Action, mudlogic:Task ;
     rdfs:range schema:URL .
 
+mudlogic:parameterConstraintsShape a rdf:Property ;
+    rdfs:label "Parameter Constraints Shape"@en ;
+    rdfs:comment "The location of the document which describes the shape of data the action will accept"@en ;
+    rdfs:domain mudlogic:Action, mudlogic:Task ;
+    rdfs:range schema:URL .
+
 # NOTE: this is a (temporary?) replacement for solid:Patch as we cannot easily serve N3 via Apache Jena
 # see https://github.com/Multi-User-Domain/mud-jena/issues/3#issuecomment-775049366
 mudlogic:Patch a rdfs:Class ;
