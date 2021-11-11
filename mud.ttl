@@ -1,11 +1,11 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 
 mud: rdf:type owl:Ontology ;
@@ -18,6 +18,22 @@ mud: rdf:type owl:Ontology ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://calum.inrupt.net/profile/card#me> ;
     dcterms:contributor <https://matttennison.inrupt.net/profile/card#me> .
+
+mud:Configuration a rdfs:Class ;
+    rdfs:label "MUD Server Configuration"@en ;
+    rdfs:comment "A document containing the configuration of the MUD provider, e.g. a list of provided endpoints"@en .
+
+mud:worldEndpoint a rdf:Property ;
+    rdfs:label "worldEndpoint"@en ;
+    rdfs:comment "The URL where a supported MUD world endpoint can be found"@en ;
+    rdfs:domain mud:Configuration ;
+    rdfs:range schema:URL .
+
+mud:sceneGenerationEndpoint a rdf:Property ;
+    rdfs:label "sceneGenerationEndpoint"@en ;
+    rdfs:comment "The URL where a supported MUD Scene Generation endpoint can be found"@en ;
+    rdfs:domain mud:Configuration ;
+    rdfs:range schema:URL .
 
 mud:Organization a rdfs:Class ;
     rdfs:subClassOf foaf:Organization ;
@@ -48,7 +64,8 @@ mud:hasBuilding a rdf:Property ;
 mud:primaryTextContent a rdf:Property ;
     rdfs:label "Primary Text Content"@en ;
     rdfs:comment "The default text description of an object"@en ;
-    rdfs:domain owl:Thing .
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string .
 
 mud:primaryImageContent a foaf:depiction ;
     rdfs:label "Primary Image Content"@en ;

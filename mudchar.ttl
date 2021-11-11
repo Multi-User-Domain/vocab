@@ -8,7 +8,7 @@
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 @prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
 
-@prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/character/mudchar.ttl#> .
+@prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
 
 mudchar: rdf:type owl:Ontology ;
     # Description
