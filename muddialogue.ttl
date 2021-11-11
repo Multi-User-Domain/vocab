@@ -1,0 +1,45 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+
+@prefix muddialogue: <#> .
+
+muddialogue:Message a rdfs:Class ;
+    rdfs:label "Dialogue Message"@en ;
+    rdfs:comment ""@en .
+
+muddialogue:performer a rdf:Property ;
+    rdfs:label "performer"@en ;
+    rdfs:comment "The agent communicating a muddialogue:Message"@en ;
+    rdfs:domain muddialogue:Message .
+
+muddialogue:content a rdf:Property ;
+    rdfs:label "content"@en ;
+    rdfs:comment "The content of the muddialogue:Message. What is being said"@en ;
+    rdfs:domain muddialogue:Message .
+
+muddialogue:shorthand a rdf:Property ;
+    rdfs:label "shorthand description"@en ;
+    rdfs:comment "Describes the content in shorter form, e.g. to display the message as a response choice"@en ;
+    rdfs:domain muddialogue:Message .
+
+muddialogue:includeContinuePrompt a rdf:Property ;
+    rdfs:label "continue prompt"@en ;
+    rdfs:comment "If set to true, the client is being advised to provide a continue prompt after the message to break up the conversation"@en ;
+    rdfs:range xsd:boolean .
+
+muddialogue:selectFollowup a rdf:Property ;
+    rdfs:label "preselected followup"@en ;
+    rdfs:comment "If provided, it is signalling to the client that the response for a message can be found my making a GET request to the provided URL. Therefore generally only included if the message is a player response to an NPC"@en ;
+    rdfs:range schema:URL .
+
+muddialogue:getResponses a rdf:Property ;
+    rdfs:label "preselected followup"@en ;
+    rdfs:comment "If provided, it is signalling to the client that the response options for a message can be found my making a GET request to the provided URL. Therefore generally only included if the message is an NPC response to a player"@en ;
+    rdfs:range schema:URL .
