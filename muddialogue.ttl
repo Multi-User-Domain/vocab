@@ -1,6 +1,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix time: <http://www.w3.org/2006/time#> .
@@ -40,6 +41,11 @@ muddialogue:selectFollowup a rdf:Property ;
     rdfs:range schema:URL .
 
 muddialogue:getResponses a rdf:Property ;
-    rdfs:label "preselected followup"@en ;
+    rdfs:label "get responses URL"@en ;
     rdfs:comment "If provided, it is signalling to the client that the response options for a message can be found my making a GET request to the provided URL. Therefore generally only included if the message is an NPC response to a player"@en ;
     rdfs:range schema:URL .
+
+muddialogue:responses a rdf:Property ;
+    rdfs:label "responses list"@en ;
+    rdfs:comment "If provided, it is signalling to the client that the response options for a message are defined by the container value"@en ;
+    rdfs:range ldp:Container .
