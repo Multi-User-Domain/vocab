@@ -58,7 +58,6 @@ mud:hasBuilding a rdf:Property ;
     rdfs:label "hasBuilding"@en ;
     rdfs:comment "A Building in a Settlement."@en ;
     rdfs:comment "Une Bâtiment dans une Ville."@fr ;
-    rdfs:domain mud:Settlement ;
     rdfs:range mud:Building .
 
 mud:primaryTextContent a rdf:Property ;
@@ -77,7 +76,6 @@ mud:population a rdf:Property ;
     rdfs:label "Population"@fr ;
     rdfs:comment "The number of people residing in a settlement."@en ;
     rdfs:comment "Le nombre de personnes résidant dans une ville."@fr ;
-    rdfs:domain mud:Settlement ;
     rdfs:range xsd:integer .
 
 mud:ownedBy a rdf:Property ;
