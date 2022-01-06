@@ -39,3 +39,10 @@ mudworld:hasSubRegion a rdf:Property ;
     rdfs:comment "Indique que la région cible est imbriquée dans cette région"@fr ;
     rdfs:domain mudworld:Region ;
     rdfs:range mudworld:Region .
+
+mudworld:hasRegions a rdf:Property ;
+    rdfs:label "hasRegions"@en ;
+    rdfs:comment "An ldp:Container defining the sub regions contained within this region. Considered to be a complete set"@en ;
+    rdfs:comment "Un ldp:Container définissant les sous-régions contenues dans cette région. Considéré comme un ensemble complet"@fr ;
+    rdfs:domain mudworld:Region ;
+    rdfs:range ldp:Container .
