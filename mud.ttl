@@ -47,7 +47,9 @@ mud:Locatable a rdfs:Class ;
 mud:Settlement a mud:Locatable ;
     rdfs:subClassOf mud:Locatable ;
     rdfs:label "Settlement"@en ;
-    rdfs:label "Ville"@fr .
+    rdfs:label "Ville"@fr ;
+    rdfs:comment "This class has been deprecated."@en ;
+    owl:deprecated true .
 
 mud:Building a mud:Locatable ;
     rdfs:subClassOf mud:Locatable ;
@@ -56,9 +58,9 @@ mud:Building a mud:Locatable ;
 
 mud:hasBuilding a rdf:Property ;
     rdfs:label "hasBuilding"@en ;
-    rdfs:comment "A Building in a Settlement."@en ;
-    rdfs:comment "Une Bâtiment dans une Ville."@fr ;
-    rdfs:range mud:Building .
+    rdfs:comment "This property has been deprecated."@en ;
+    rdfs:range mud:Building ;
+    owl:deprecated true .
 
 mud:primaryTextContent a rdf:Property ;
     rdfs:label "Primary Text Content"@en ;
