@@ -32,3 +32,10 @@ mudworld:subRegionOf a rdf:Property ;
     rdfs:comment "Indique que la région est imbriquée dans la région cible"@fr ;
     rdfs:domain mudworld:Region ;
     rdfs:range mudworld:Region .
+
+mudworld:hasSubRegion a rdf:Property ;
+    rdfs:label "hasSubRegion"@en ;
+    rdfs:comment "Indicates the target region is nested within this region"@en ;
+    rdfs:comment "Indique que la région cible est imbriquée dans cette région"@fr ;
+    rdfs:domain mudworld:Region ;
+    rdfs:range mudworld:Region .
