@@ -1,0 +1,34 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+
+@prefix mudworld: <#> .
+
+mud: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Multi-User Domain World ontology" ;
+    dcterms:description """
+    An ontology for describing the properties basic to world data in Multi-User Domains
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
+mudworld:Region a mud:Locatable ;
+    rdfs:subClassOf mud:Locatable ;
+    rdfs:label "Region"@en ;
+    rdfs:label "Région"@fr .
+
+mudworld:subRegionOf a rdf:Property ;
+    rdfs:label "subRegionOf"@en ;
+    rdfs:comment "Indicates the region is nested within the target region"@en ;
+    rdfs:comment "Indique que la région est imbriquée dans la région cible"@fr ;
+    rdfs:domain mudworld:Region ;
+    rdfs:range mudworld:Region .

@@ -6,6 +6,10 @@ These vocabularies are created to support Multi User Domain applications and for
 
 The core ontology
 
+## MUD World
+
+An ontology for describing the properties basic to world data
+
 ## MUD Buildings
 
 Describes some sub-types of Building and their properties
