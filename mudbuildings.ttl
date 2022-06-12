@@ -19,12 +19,37 @@ mudbuildings: rdf:type owl:Ontology ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://calum.inrupt.net/profile/card#me> .
 
-mudbuildings:Stadium a mud:Building ;
+mudbuildings:Agora a mud:Building ;
     rdfs:subClassOf mud:Building ;
-    rdfs:label "Stadium"@en ;
-    rdfs:label "Stade"@fr .
+    rdfs:label "Agora"@en ;
+    rdfs:label "Agora"@fr ;
+    rdfs:label "Αγορά"@gr .
+
+mudbuildings:Factory a mud:Building ;
+    rdfs:subClassOf mud:Building ;
+    rdfs:label "Factory"@en ;
+    rdfs:label "Manufacture"@fr ;
+    rdfs:label "Εργοστάσιο"@gr .
+
+mudbuildings:House a mud:Building ;
+    rdfs:subClassOf mud:Building ;
+    rdfs:label "House"@en ;
+    rdfs:label "Maison"@fr ;
+    rdfs:label "Σπίτι"@gr .
 
 mudbuildings:Nightclub a mud:Building ;
     rdfs:subClassOf mud:Building ;
     rdfs:label "Nightclub"@en ;
-    rdfs:label "Boite"@fr .
+    rdfs:label "Boîte de nuit"@fr .
+
+mudbuildings:Prison a mud:Building ;
+    rdfs:subClassOf mud:Building ;
+    rdfs:label "Prison"@en ;
+    rdfs:label "Prison"@fr ;
+    rdfs:label "Φυλακή"@gr .
+
+mudbuildings:Stadium a mud:Building ;
+    rdfs:subClassOf mud:Building ;
+    rdfs:label "Stadium"@en ;
+    rdfs:label "Stade"@fr ;
+    rdfs:label "Στάδιο"@gr .
