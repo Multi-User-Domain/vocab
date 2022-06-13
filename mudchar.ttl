@@ -4,6 +4,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vgo: <http://purl.org/net/videogameontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 @prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
@@ -26,7 +27,7 @@ mudchar:Party a rdfs:Class ;
     rdfs:comment "A Group of characters in a single unit, in the same physical location"@en .
 
 mudchar:Character a rdfs:Class ;
-    rdfs:subClassOf foaf:Person ;
+    rdfs:subClassOf vgo:Character ;
     rdfs:label "Character"@en ;
     rdfs:label "Personnage"@fr .
 
