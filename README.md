@@ -22,6 +22,10 @@ All things to do with Characters, playable or otherwise
 
 An extension of the [time](https://www.w3.org/TR/owl-time/) ontology to provide context for time-bound events in MUD
 
+## MUD Items
+
+Common objects and items used in a game world
+
 ## MUD Logic
 
 Currently stores information about Tasks and Actions. Relys on [solid-terms](https://github.com/solid/vocab) to model things like consequences (updates to graphs)

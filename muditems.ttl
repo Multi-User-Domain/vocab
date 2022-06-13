@@ -1,0 +1,28 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vgo: <http://purl.org/net/videogameontology#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+
+@prefix muditems: <#> .
+
+muditems:SingleUseItem a rdfs:Class ;
+    rdfs:subClassOf vgo:Item ;
+    rdfs:label "Single Use Item"@en ;
+    rdfs:comment "An item which can only be used once"@en .
+
+muditems:TreasureChest a muditems:SingleUseItem ;
+    rdfs:label "Treasure Chest"@en ;
+    rdfs:comment "Contains treasure!"@en .
+
+muditems:isUsed a rdf:Property ;
+    rdfs:label "isUsed"@en ;
+    rdfs:comment "Indicates that a single-use item has been used"@en ;
+    rdfs:domain muditems:SingleUseItem ;
+    rdfs:range xsd:boolean .
