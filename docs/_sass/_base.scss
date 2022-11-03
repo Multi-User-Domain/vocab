@@ -1,0 +1,28 @@
+$content-width: 800px;
+$main: #19CCAA;
+$font-style: 'Exo', sans-serif;
+$font-color: #262626;
+$lighter-font-color: #4a4848;
+$link-color: #60e343;
+$link-hover-color: #aaff13;
+$link-visited-color: #57b044;
+$navbar-hover-color: $link-hover-color;
+$main-heading-font: $font-style;
+$heading-font: $font-style;
+$heading-font-color:$font-color;
+$post-heading-font: $font-style;
+$post-heading-font-color: $heading-font-color;
+$light: #E7EDF4;
+$header:  #38924c;
+$header-width: 100%;
+
+$tag-bg: #57b044;
+$tag-bg-active: #aaff13;
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}

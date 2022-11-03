@@ -1,0 +1,6 @@
+{% assign docs = site.docs | where: "lang", page.lang %}
+<ol>
+    {% for vocab in vocabs %}
+        <li><a href="{{ 'vocabs/' + vocab.path | relative_url }}">{{vocab.title}}</a>. {{vocab.summary}}</li>
+    {% endfor %}
+</ol>

@@ -1,0 +1,177 @@
+
+body {
+    width: 100vw;
+    overflow-x: hidden !important;
+    margin: 0;
+    color: $font-color;
+    font-family: $font-style;
+    font-size: 1.1em;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+}
+
+.image-caption {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $lighter-font-color;
+    font-style: italic;
+}
+
+#container {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    color: $heading-font-color;
+    font-family: $heading-font;
+    line-height: 1.5;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+}
+a:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+}
+a:active {
+    color: $link-hover-color;
+}
+a:visited {
+    color: $link-visited-color;
+}
+
+main {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.text-centre {
+    text-align: center;
+}
+
+/*
+*    HEADER.HTML
+*/
+
+.navbar-toggler {
+    background-color: $light;
+}
+
+header {
+    background-color: $header;
+    max-width: $header-width;
+    //background-image: url("../img/header.png");
+    //background-repeat: no-repeat;
+    //background-position: center;
+    padding: 0px 15px;
+    text-align: center;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: $header-width) {
+    header {
+        margin: auto;
+        border-radius: 20px;
+    }
+}
+
+.main-header {
+    color: $heading-font-color;
+    //text-shadow: 4px 4px 2px black;
+    font-family: $main-heading-font;
+    font-size: 64px;
+}
+
+.nav-item {
+    padding-right: 13px;
+}
+
+.nav-item a {
+    color: $heading-font-color;
+    font-family: $main-heading-font;
+    //text-shadow: 3px 3px 2px black;
+    font-size: 24px;
+}
+
+.nav-item a:hover {
+    color: $navbar-hover-color;
+    text-decoration: none;
+}
+
+//font-size can cause display issues with smaller width devices
+@media screen and (min-width: 300px) and (max-width: 462px) {
+.main-header {
+    font-size: 32px;
+}
+
+.nav-item a {
+    font-size: 18px;
+}
+}
+@media screen and (max-width: 300px) {
+.main-header {
+    font-size: 32px;
+}
+
+.nav-item a {
+    font-size: 18px;
+}
+}
+
+// FOOTER.HTML
+.lang-options {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+
+    ul {
+        list-style: none;
+
+        li {
+            display: inline; /*display the elements on one line*/
+            margin-left: 10px;
+        }
+    }
+}
+
+.contact-col {
+    text-align:center;
+}
+
+
+/*
+*     PAGE.HTML
+*/
+.page-title, .contact-title {
+    text-align: center;
+    font-family: $main-heading-font !important;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.page-content-container hr {
+    width: 80vw;
+    margin: auto;
+}
+
+.page-content-container {
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
