@@ -35,11 +35,3 @@ mudchar:hasTask a rdf:Property ;
     rdfs:label "hasTask"@en ;
     rdfs:comment "a mudlogic:Task that a Thing is pre-occupied with" ;
     rdfs:range mudlogic:Task .
-
-# TODO: add constraint that you can have *only one* mainParty
-# NOTE: currently unused
-mudchar:mainParty a rdf:Property ;
-    rdfs:label "mainParty"@en ;
-    rdfs:comment "In FOAF an agent can have many groups, but in MUD we can have only one mainParty"@en ;
-    rdfs:domain foaf:Person ;
-    rdfs:range mudchar:Party .
