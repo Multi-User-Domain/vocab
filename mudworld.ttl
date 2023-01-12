@@ -52,10 +52,14 @@ mudworld:hasVisitable a rdf:Property ;
     rdfs:comment "Denotes a link to a visitable location within the Thing"@en ;
     rdfs:comment "Indique un lien vers un lieu visitable au sein de la Thing"@fr .
 
+# providing your world with a map: https://github.com/Multi-User-Domain/vocab/wiki/World-Maps
+
 mudworld:hasTileMap a rdf:Property ;
     rdfs:label "hasTileMap"@en ;
     rdfs:comment "A 2D array describing a grid of tiles (used commonly in 2D games)"@en ;
     rdfs:range ldp:Container .
+
+# giving objects location in the world: https://github.com/Multi-User-Domain/vocab/wiki/World-Giving-Things-Location
 
 mudworld:hasSize a rdf:Property ;
     rdfs:label "hasSize"@en ;
