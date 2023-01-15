@@ -72,7 +72,8 @@ mud:species a rdf:Property ;
     rdfs:label "Species"@en ;
     rdfs:label "Espèce"@fr ;
     rdfs:label "Especies"@es ;
-    rdfs:comment "A character may be of different species (e.g. mud:Human)"@en .
+    rdfs:comment "A property for Things with a mud:Species (e.g. mud:Human)"@en ;
+    rdfs:range mud:Species .
 
 mud:hasBuilding a rdf:Property ;
     rdfs:label "hasBuilding"@en ;
