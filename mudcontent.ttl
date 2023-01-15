@@ -38,11 +38,21 @@ mudcontent:usesSense a rdf:Property ;
   rdfs:comment "Implies that the subject (Content) uses this Sense"@en ;
   rdfs:range mudcontent:Sense .
 
+mudcontent:hasSense a rdf:Property ;
+  rdfs:label "hasSense"@en ;
+  rdfs:comment "Connects a Sense to its' perceiver"@en ;
+  rdfs:range mudcontent:Sense .
+
 mudcontent:sees a rdf:Property ;
   rdfs:label "Sees"@en ;
-  rdfs:comment "The visual sense of an Agent"@en ;
-  rdfs:domain foaf:Agent ;
+  rdfs:comment "The visual sense of the perceiver"@en ;
   rdfs:range mud:Content .
+
+mudcontent:senseStrength a rdf:Property ;
+  rdfs:label "senseStrength"@en ;
+  rdfs:comment "Used to model whether the perceiver has a heightened or weakened sense of sight, for example. Intended for a gaming context. 0 should be considered normal, and default"@en ;
+  rdfs:domain mudcontent:Sense ;
+  rdfs:range xsd:integer .
 
 mudcontent:describes a rdf:Property ;
   rdfs:label "Describes"@en ;
