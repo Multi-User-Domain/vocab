@@ -56,6 +56,24 @@ mud:Building a mud:Locatable ;
     rdfs:label "Building"@en ;
     rdfs:label "Bâtiment"@fr .
 
+mud:Species a rdfs:Class ;
+    rdfs:label "Species"@en ;
+    rdfs:label "Espèce"@fr ;
+    rdfs:label "Especies"@es ;
+    rdfs:comment "A biological classification"@en .
+
+mud:Human a rdfs:Class ;
+    rdfs:subClassOf mud:Species ;
+    rdfs:label "Human"@en ;
+    rdfs:label "Humain"@fr ;
+    rdfs:comment "A human being" .
+
+mud:species a rdf:Property ;
+    rdfs:label "Species"@en ;
+    rdfs:label "Espèce"@fr ;
+    rdfs:label "Especies"@es ;
+    rdfs:comment "A character may be of different species (e.g. mud:Human)"@en .
+
 mud:hasBuilding a rdf:Property ;
     rdfs:label "hasBuilding"@en ;
     rdfs:comment "This property has been deprecated."@en ;
