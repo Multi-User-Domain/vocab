@@ -38,6 +38,10 @@ Vocabulary used to describe content displayed to the user in text and image form
 
 Vocabulary used in the definitions of decentralised parts of dialogue with characters
 
+## MUD Fantasy
+
+Vocabulary containing terms for commonly used fantasy themes
+
 # Contributing
 
 We aim to follow the Inrupt Guidelines for writing ontologies. At the time of writing these are still contained in a [pull request branch](https://github.com/pmcb55/public-documentation/blob/feat/add-rdf-vocab-guidelines/coding-conventions/rdf-vocabulary-guidelines.md)

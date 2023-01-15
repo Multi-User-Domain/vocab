@@ -1,0 +1,44 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vgo: <http://purl.org/net/videogameontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+@prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
+@prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
+
+@prefix mudfantasy: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#> .
+
+mudfantasy: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Multi-User Domain Fantasy ontology" ;
+    dcterms:description """
+    Vocabulary containing terms for commonly used fantasy themes
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
+# mud:Species subclasses and extensions
+mudfantasy:Vampire a rdfs:Class ;
+    rdfs:subclassOf mud:Species ;
+    rdfs:label "Vampire"@en ;
+    rdfs:label "Vampire"@fr ;
+    rdfs:label "Vampiro"@es ;
+    rdfs:comment "An undead being in human form that survives by sucking the blood of living people"@en ;
+    rdfs:comment "Un être mort-vivant à forme humaine qui survit en suçant le sang des personnes vivantes"@fr .
+
+mudfantasy:Elf a rdfs:Class ;
+    rdfs:subclassOf mud:Species ;
+    rdfs:label "Elf"@en ;
+    rdfs:label "Elfe"@fr ;
+    rdfs:comment "A generic or base class for different kinds of fantasy elves"@en .
+
+mudfantasy:Dwarf a rdfs:Class ;
+    rdfs:subclassOf mud:Species ;
+    rdfs:label "Dwarf"@en ;
+    rdfs:label "Nairn"@fr ;
+    rdfs:comment "A generic or base class for different kinds of fantasy dwarves"@en .
