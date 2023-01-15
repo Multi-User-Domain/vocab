@@ -1,0 +1,45 @@
+@prefix : <#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vgo: <http://purl.org/net/videogameontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+@prefix mudcontent: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#> .
+@prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
+@prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
+@prefix mudfantasy: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#> .
+
+# a document containing examples of Characters intended to be used as templates
+
+# TODO: add short descriptions for characters
+:VampiricSight a mudcontent:Sense ;
+    mudcontent:senseStrength "10"^^xsd:integer .
+
+:OspreyWithers
+    a mudchar:Character ;
+    n:fn "Osprey Withers" ;
+    foaf:name "Osprey Withers" ;
+    mud:species mudfantasy:Vampire ;
+    n:hasGender n:Male ;
+    mudcontent:hasSense :VampiricSight .
+
+:Achilles
+    a mudchar:Character ;
+    n:fn "Achilles" ;
+    foaf:depiction
+        <http://images.fineartamerica.com/images-medium-large/achilles-arturas-slapsys.jpg>;
+    foaf:name "Achilles" ;
+    mud:species mud:Human ;
+    n:hasGender n:Male .
+
+:FloppyLeRedoux
+    a mudchar:Character ;
+    n:fn "Floppy Le Redoux" ;
+    foaf:name "Floppy Le Redoux" ;
+    mud:species mud:Human ;
+    n:hasGender n:Female .
