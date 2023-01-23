@@ -122,3 +122,56 @@ mud:CharacterList a rdf:Property ;
     rdfs:comment "une liste de personnages appartenant à un compte"@fr ;
     rdfs:domain mud:Account ;
     rdfs:range xsd:string .
+
+# Quests. Intended to be attached to a player and/or Character
+
+mud:Quest a rdfs:Class ;
+    rdfs:label "Quest"@en ;
+    rdfs:label "Quête"@fr ;
+    rdfs:comment "A goal, expedition, adventure. Something to be achieved"@en .
+
+mud:questImportance a rdf:Property ;
+    rdfs:label "Quest Importance"@en ;
+    rdfs:label "Importance du Quête"@fr ;
+    rdfs:comment "How important the quest is to its' holder. The higher the value the more important"@en ;
+    rdfs:domain mud:Quest ;
+    rdfs:range xsd:integer .
+
+# TODO: write a guide on quest conclusions. This could be a string description, success or failure, or a link to something more complex
+mud:questConclusion a rdf:Property ;
+    rdfs:label "Quest Conclusion"@en ;
+    rdfs:comment "When a quest was completed - what happened? This could be a string description, success or failure, or a link to something more complex"@en ;
+    rdfs:domain mud:Quest .
+
+mud:questAcceptedAt a rdf:Property ;
+    rdfs:label "questAcceptedAt"@en ;
+    rdfs:comment "The date/time the holder accepted the quest"@en ;
+    rdfs:domain mud:Quest ;
+    rdfs:range xsd:datetime .
+
+mud:questCompletedAt a rdf:Property ;
+    rdfs:label "questCompletedAt"@en ;
+    rdfs:comment "The date/time the holder completed the quest"@en ;
+    rdfs:domain mud:Quest ;
+    rdfs:range xsd:datetime .
+
+mud:questDateTimeLimit a rdf:Property ;
+    rdfs:label "questDateTimeLimit"@en ;
+    rdfs:comment "The date/time the holder must have completed the quest by in order to succeed"@en ;
+    rdfs:domain mud:Quest ;
+    rdfs:range xsd:datetime .
+
+mud:hasActiveQuests a rdf:Property ;
+    rdfs:label "hasActiveQuests"@en ;
+    rdfs:comment "A list of active quests - yet to be completed and in active pursuit"@en ;
+    rdfs:range ldp:Container .
+
+mud:hasInactiveQuests a rdf:Property ;
+    rdfs:label "hasInactiveQuests"@en ;
+    rdfs:comment "A list of inactive quests - yet to be completed and in not currently being pursued"@en ;
+    rdfs:range ldp:Container .
+
+mud:completedQuests a rdf:Property ;
+    rdfs:label "completedQuests"@en ;
+    rdfs:comment "A list of quests completed by the agent"@en ;
+    rdfs:range ldp:Container .
