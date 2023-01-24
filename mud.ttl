@@ -175,3 +175,10 @@ mud:completedQuests a rdf:Property ;
     rdfs:label "completedQuests"@en ;
     rdfs:comment "A list of quests completed by the agent"@en ;
     rdfs:range ldp:Container .
+
+# TODO: guide and demonstration for the below
+
+mud:questRewardURL a rdf:Property ;
+    rdfs:label "Quest Reward URL"@en ;
+    rdfs:comment "A URL where the consequences of quest completion can be found. It could accept and return a graph"@en ;
+    rdfs:range schema:URL .
