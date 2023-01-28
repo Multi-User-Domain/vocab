@@ -1,5 +1,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix time: <http://www.w3.org/2006/time#> .
@@ -24,12 +25,10 @@ mudacct:Account a rdfs:Class ;
     rdfs:label "Multi-User Domain Account"@en ;
     rdfs:comment "The users' account identifies them while they traverse the MUD"@en .
 
-# TODO: make CharactersList a rdfs:List and replace string link to collection
-
 mudacct:CharacterList a rdf:Property ;
     rdfs:label "characters list"@en ;
     rdfs:label "liste de personnages"@fr ;
     rdfs:comment "a list of the Characters owned by an associated Account"@en ;
     rdfs:comment "une liste de personnages appartenant à un compte"@fr ;
     rdfs:domain mudacct:Account ;
-    rdfs:range xsd:string .
+    rdfs:range ldp:Container .
