@@ -111,16 +111,6 @@ mud:locatedAt a rdf:Property ;
     rdfs:comment "The location of a thing, in a mud:Locatable"@en ;
     rdfs:domain mud:Locatable .
 
-# TODO: make CharactersList a rdfs:List and replace string link to collection
-
-mud:CharacterList a rdf:Property ;
-    rdfs:label "characters list"@en ;
-    rdfs:label "liste de personnages"@fr ;
-    rdfs:comment "a list of the Characters owned by an associated Account"@en ;
-    rdfs:comment "une liste de personnages appartenant à un compte"@fr ;
-    rdfs:domain mud:Account ;
-    rdfs:range xsd:string .
-
 # Quests. Intended to be attached to a player and/or Character
 
 mud:Quest a rdfs:Class ;
