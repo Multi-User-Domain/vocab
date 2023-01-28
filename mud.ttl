@@ -111,8 +111,6 @@ mud:locatedAt a rdf:Property ;
     rdfs:comment "The location of a thing, in a mud:Locatable"@en ;
     rdfs:domain mud:Locatable .
 
-mud:Account a foaf:OnlineGamingAccount .
-
 # TODO: make CharactersList a rdfs:List and replace string link to collection
 
 mud:CharacterList a rdf:Property ;

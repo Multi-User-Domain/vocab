@@ -6,6 +6,10 @@ These vocabularies are created to support Multi User Domain applications and for
 
 The core ontology
 
+## MUD Account
+
+User data is stored and managed using a standard which leverages this ontology
+
 ## MUD World
 
 An ontology for describing the properties basic to world data
