@@ -17,7 +17,7 @@
 # a document containing examples of Characters intended to be used as templates
 
 # TODO: add short descriptions for characters
-:VampiricSight a mudcontent:Sense ;
+:VampiricSight a mudcontent:Sight ;
     mudcontent:senseStrength "10"^^xsd:integer .
 
 :OspreyWithers
