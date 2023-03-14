@@ -12,6 +12,7 @@
 @prefix mudcontent: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#> .
 @prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
 @prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
+@prefix mudcard: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcard.ttl#> .
 @prefix mudfantasy: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#> .
 
 # a document containing examples of Characters intended to be used as templates
@@ -42,4 +43,5 @@
     n:fn "Floppy Le Redoux" ;
     foaf:name "Floppy Le Redoux" ;
     mud:species mud:Human ;
-    n:hasGender n:Female .
+    n:hasGender n:Female ;
+    mud:implementsSpecification mudcard:playableCard .
