@@ -18,6 +18,10 @@ An ontology for describing the properties basic to world data
 
 Describes some sub-types of Building and their properties
 
+## MUD Card
+
+Vocabulary containing terms for card games
+
 ## MUD Characters
 
 All things to do with Characters, playable or otherwise
