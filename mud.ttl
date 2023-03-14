@@ -19,6 +19,19 @@ mud: rdf:type owl:Ontology ;
     dcterms:creator <https://calum.inrupt.net/profile/card#me> ;
     dcterms:contributor <https://matttennison.inrupt.net/profile/card#me> .
 
+# Specifications
+
+mud:Specification a rdfs:Class ;
+    rdfs:label "MUD specification"@en ;
+    rdfs:comment "Represents a specification"@en .
+
+mud:implementsSpecification a rdf:Property ;
+    rdfs:label "Implements specification"@en ;
+    rdfs:comment "If an object has this property it is indicating that it respects the specification linked"@en ;
+    rdfs:range mud:Specification .
+
+# Server configurations
+
 mud:Configuration a rdfs:Class ;
     rdfs:label "MUD Server Configuration"@en ;
     rdfs:comment "A document containing the configuration of the MUD provider, e.g. a list of provided endpoints"@en .
