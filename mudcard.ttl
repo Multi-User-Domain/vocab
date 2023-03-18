@@ -23,3 +23,8 @@ mudcard: rdf:type owl:Ontology ;
     dcterms:creator <https://calum.inrupt.net/profile/card#me> .
 
 mudcard:playableCard a mud:Specification .
+
+mudcard:description a rdf:Property ;
+    rdfs:label "description"@en ;
+    rdfs:comment "A description indicating what happens when the card is played"@en ;
+    rdfs:range xsd:string .
