@@ -52,7 +52,6 @@ mudlogic:boundTo a rdf:Property ;
 mudlogic:hasBinding a rdf:Property ;
     rdfs:label "hasBinding"@en ;
     rdfs:comment "Indicates that an action has a binding to a resource (i.e. a parameter, a resource which is involved in the action)"@en ;
-    rdfs:range mudlogic:Action ;
     rdfs:range mudlogic:ActionBinding .
 
 # TODO: instructing a game on how to find a binding using SPARQL
