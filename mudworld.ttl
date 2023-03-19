@@ -26,6 +26,16 @@ mudworld:Region a mud:Locatable ;
     rdfs:label "Region"@en ;
     rdfs:label "Région"@fr .
 
+mudworld:Tile a rdfs:Class ;
+    rdfs:label "Tile"@en ;
+    rdfs:comment "A tile on a tile map"@en .
+
+mudworld:Terrain a rdfs:Class ;
+    rdfs:label "Terrain"@en ;
+    rdfs:label "Terrain"@fr ;
+    rdfs:comment "Represents a type of terrain on a map (e.g. grass, lava)"@en ;
+    rdfs:comment "Signifie un genre du terrain sur la carte (e.g. herbe, lave)"@fr .
+
 mudworld:subRegionOf a rdf:Property ;
     rdfs:label "subRegionOf"@en ;
     rdfs:comment "Indicates the region is nested within the target region"@en ;
@@ -58,6 +68,11 @@ mudworld:hasTileMap a rdf:Property ;
     rdfs:label "hasTileMap"@en ;
     rdfs:comment "A 2D array describing a grid of tiles (used commonly in 2D games)"@en ;
     rdfs:range ldp:Container .
+
+mudworld:hasTerrain a rdf:Property ;
+    rdfs:label "hasTerrain"@en ;
+    rdfs:comment "indicates the type of terrain, e.g. on a tile"@en ;
+    rdfs:range mudworld:Terrain .
 
 # giving objects location in the world: https://github.com/Multi-User-Domain/vocab/wiki/World-Giving-Things-Location
 
