@@ -38,6 +38,41 @@ mudlogic:parameterConstraintsShape a rdf:Property ;
     rdfs:comment "A shape which is used for validating input parameters"@en ;
     rdfs:range sh:NodeShape .
 
+# Bindings: Action parameters
+
+mudlogic:ActionBinding a rdfs:Class ;
+    rdfs:label "Action Binding"@en ;
+    rdfs:comment "A resource which is bound to the input or output graph of an action"@en .
+
+mudlogic:boundTo a rdf:Property ;
+    rdfs:label "boundTo"@en ;
+    rdfs:comment "The object indicates the object which is bound via the binding"@en ;
+    rdfs:domain mudlogic:ActionBinding .
+
+mudlogic:hasBinding a rdf:Property ;
+    rdfs:label "hasBinding"@en ;
+    rdfs:comment "Indicates that an action has a binding to a resource (i.e. a parameter, a resource which is involved in the action)"@en ;
+    rdfs:range mudlogic:Action ;
+    rdfs:range mudlogic:ActionBinding .
+
+# TODO: instructing a game on how to find a binding using SPARQL
+# (temporarily?) providing sub-types of ActionBinding for this purpose
+
+mudlogic:ActorBinding a rdfs:Class ;
+    rdfs:subClassOf mudlogic:ActionBinding ;
+    rdfs:label "Actor Binding"@en ;
+    rdfs:comment "The binding to the actor performing an action. Differentiated to aid a game in finding the right resource for the binding"@en .
+
+mudlogic:TargetBinding a rdfs:Class ;
+    rdfs:subClassOf mudlogic:ActionBinding ;
+    rdfs:label "Target Binding"@en ;
+    rdfs:comment "The binding to a target of a particular action. Differentiated to aid a game in finding the right resource for the binding"@en .
+
+mudlogic:WitnessBinding a rdfs:Class ;
+    rdfs:subClassOf mudlogic:ActionBinding ;
+    rdfs:label "Witness Binding"@en ;
+    rdfs:comment "The binding to a witness to the action performed. Differentiated to aid a game in finding the right resource for the binding"@en .
+
 # NOTE: this is a (temporary?) replacement for solid:Patch as we cannot easily serve N3 via Apache Jena
 # see https://github.com/Multi-User-Domain/mud-jena/issues/3#issuecomment-775049366
 mudlogic:Patch a rdfs:Class ;
