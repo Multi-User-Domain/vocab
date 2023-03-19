@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-# @prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 
@@ -35,8 +35,8 @@ mudlogic:actAt a rdf:Property ;
 
 mudlogic:parameterConstraintsShape a rdf:Property ;
     rdfs:label "Parameter Constraints Shape"@en ;
-    rdfs:comment "The location of the document which describes the shape of data the action will accept"@en ;
-    rdfs:range schema:URL .
+    rdfs:comment "A shape which is used for validating input parameters"@en ;
+    rdfs:range sh:NodeShape .
 
 # NOTE: this is a (temporary?) replacement for solid:Patch as we cannot easily serve N3 via Apache Jena
 # see https://github.com/Multi-User-Domain/mud-jena/issues/3#issuecomment-775049366
