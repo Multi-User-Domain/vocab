@@ -112,9 +112,14 @@ mudlogic:deletes a rdf:Property ;
     rdfs:domain mudlogic:Operation ;
     rdfs:range mudlogic:ActionBinding .
 
-mudlogic:endState a rdf:Property ;
-    rdfs:label "End State"@en ;
-    rdfs:comment "Models changes to be made in RDF which represent the end state of some task"@en ;
+mudlogic:postsOnComplete a rdf:Property ;
+    rdfs:label "postsOnComplete"@en ;
+    rdfs:comment "When an action or task is complete, the connected Post changes are made"@en ;
+    rdfs:range mudlogic:Post .
+
+mudlogic:patchesOnComplete a rdf:Property ;
+    rdfs:label "patchesOnComplete"@en ;
+    rdfs:comment "When an action or task is complete, the connected Patch changes are made"@en ;
     rdfs:range mudlogic:Patch .
 
 mudlogic:actionDiscoveryEndpoint a rdf:Property ;
