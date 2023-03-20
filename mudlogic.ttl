@@ -72,9 +72,18 @@ mudlogic:WitnessBinding a rdfs:Class ;
     rdfs:label "Witness Binding"@en ;
     rdfs:comment "The binding to a witness to the action performed. Differentiated to aid a game in finding the right resource for the binding"@en .
 
-# NOTE: this is a (temporary?) replacement for solid:Patch as we cannot easily serve N3 via Apache Jena
-# see https://github.com/Multi-User-Domain/mud-jena/issues/3#issuecomment-775049366
+mudlogic:Operation a rdfs:Class ;
+    rdfs:label "Operation"@en ;
+    rdfs:label "Operation"@fr ;
+    rdfs:comment "Base class for different kinds of graph operation (e.g. Patch and Post)"@en .
+
+mudlogic:Post a rdfs:Class ;
+    rdfs:subClassOf mudlogic:Operation ;
+    rdfs:label "Post"@en ;
+    rdfs:comment "Attaches resources (via property inserts) to be created during a state change"@en .
+
 mudlogic:Patch a rdfs:Class ;
+    rdfs:subClassOf mudlogic:Operation ;
     rdfs:label "Patch"@en ;
     rdfs:comment "Attaches resources (via properties inserts and deletes) to be PATCHed during a state change. During a PATCH the referenced resources are not replaced"@en .
 
@@ -93,11 +102,15 @@ mudlogic:isComplete a rdf:Property ;
 
 mudlogic:inserts a rdf:Property ;
     rdfs:label "Inserts"@en ;
-    rdfs:comment "A pointer to (clone of a) Resource holding properties which should be inserted to a Graph during the change"@en .
+    rdfs:comment "A pointer to (clone of a) Resource holding properties which should be inserted to a Graph during the change"@en ;
+    rdfs:domain mudlogic:Operation ;
+    rdfs:range mudlogic:ActionBinding .
 
 mudlogic:deletes a rdf:Property ;
     rdfs:label "Deletes"@en ;
-    rdfs:comment "A pointer to a (clone of a) Resource holding properties which should be deleted in a Graph during the change"@en .
+    rdfs:comment "A pointer to a (clone of a) Resource holding properties which should be deleted in a Graph during the change"@en ;
+    rdfs:domain mudlogic:Operation ;
+    rdfs:range mudlogic:ActionBinding .
 
 mudlogic:endState a rdf:Property ;
     rdfs:label "End State"@en ;
