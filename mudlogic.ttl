@@ -1,6 +1,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -72,6 +72,8 @@ mudlogic:WitnessBinding a rdfs:Class ;
     rdfs:label "Witness Binding"@en ;
     rdfs:comment "The binding to a witness to the action performed. Differentiated to aid a game in finding the right resource for the binding"@en .
 
+# modelling graph state changes made by an Action
+
 mudlogic:Operation a rdfs:Class ;
     rdfs:label "Operation"@en ;
     rdfs:label "Operation"@fr ;
@@ -104,13 +106,15 @@ mudlogic:inserts a rdf:Property ;
     rdfs:label "Inserts"@en ;
     rdfs:comment "A pointer to (clone of a) Resource holding properties which should be inserted to a Graph during the change"@en ;
     rdfs:domain mudlogic:Operation ;
-    rdfs:range mudlogic:ActionBinding .
+    # TODO: add formal constraint that container should contain only ActionBinding subclasses
+    rdfs:range ldp:Container .
 
 mudlogic:deletes a rdf:Property ;
     rdfs:label "Deletes"@en ;
     rdfs:comment "A pointer to a (clone of a) Resource holding properties which should be deleted in a Graph during the change"@en ;
     rdfs:domain mudlogic:Operation ;
-    rdfs:range mudlogic:ActionBinding .
+    # TODO: add formal constraint that container should contain only ActionBinding subclasses
+    rdfs:range ldp:Container .
 
 mudlogic:postsOnComplete a rdf:Property ;
     rdfs:label "postsOnComplete"@en ;
