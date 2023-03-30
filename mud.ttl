@@ -22,8 +22,13 @@ mud: rdf:type owl:Ontology ;
 # Specifications
 
 mud:Specification a rdfs:Class ;
-    rdfs:label "MUD specification"@en ;
-    rdfs:comment "Represents a specification"@en .
+    rdfs:label "Specification"@en ;
+    rdfs:comment "Represents a specification, allowing the negotiation of content based on theme/game community"@en .
+
+mud:ArtStyle a rdfs:Class ;
+    rdfs:subClassOf mud:Specification ;
+    rdfs:label "ArtStyle"@en ;
+    rdfs:comment "A type of specification which indicates the compatibility between games of different artistic styles in graphics. The objective is to allow the game to prioritise graphical representations more consistent with its themes."@en .
 
 mud:implementsSpecification a rdf:Property ;
     rdfs:label "Implements specification"@en ;
