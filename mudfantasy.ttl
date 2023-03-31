@@ -42,3 +42,19 @@ mudfantasy:Dwarf a rdfs:Class ;
     rdfs:label "Dwarf"@en ;
     rdfs:label "Nairn"@fr ;
     rdfs:comment "A generic or base class for different kinds of fantasy dwarves"@en .
+
+# Spells and Magic
+# NOTE: spells can be considered as types of Action. For now they don't have a subclass
+
+mudfantasy:isTransformedInto a rdf:Property ;
+    rdfs:label "isTransformedInto"@en ;
+    rdfs:comment "Indicates that the Thing has transformed into another form. For example a Vampire can transform into a bat"@en .
+
+mudfantasy:Illusion a rdfs:Class;
+    rdfs:label "Illusion"@en ;
+    rdfs:comment "Contains information about an illusion being performed"@en .
+
+mudfantasy:appearsAs a rdf:Property ;
+    rdfs:label "appearsAs"@en ;
+    rdfs:comment "Indicates that the Thing is being presented in another form (an illusion)"@en ;
+    rdfs:range mud:Illusion .
