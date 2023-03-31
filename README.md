@@ -2,9 +2,13 @@
 
 These vocabularies are created to support Multi User Domain applications and for the Multi User Domain project
 
+## 2D Graphics
+
+Definitions for directing the generation and application of video-game graphics in 2D
+
 ## MUD
 
-The core ontology
+The core ontology for Multi-User-Domain logic
 
 ## MUD Account
 

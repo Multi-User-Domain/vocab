@@ -1,0 +1,25 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+
+@prefix 2Dgraphics: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/2Dgraphics.ttl#> .
+
+2Dgraphics: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "2D Graphics ontology" ;
+    dcterms:description """
+    Definitions for directing the generation and application of 2D graphics for use in decentralised video-games
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
+2Dgraphics:Animation a rdfs:Class ;
+    rdfs:label "Animation"@en ;
+    rdfs:comment "Each action (e.g. movement) can have an animation associated with it. The animation is concerned with the instructions for graphical representation of the action."@en .
