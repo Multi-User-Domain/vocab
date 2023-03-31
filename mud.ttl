@@ -6,6 +6,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 
 mud: rdf:type owl:Ontology ;
@@ -91,7 +92,7 @@ mud:species a rdf:Property ;
     rdfs:label "Espèce"@fr ;
     rdfs:label "Especies"@es ;
     rdfs:comment "A property for Things with a mud:Species (e.g. mud:Human)"@en ;
-    rdfs:range mud:Species .
+    rdfs:range mud:Species, wd:Q16521 . # Q16521 is WikiData's Taxon class
 
 mud:hasBuilding a rdf:Property ;
     rdfs:label "hasBuilding"@en ;
