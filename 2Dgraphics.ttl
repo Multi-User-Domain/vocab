@@ -23,3 +23,7 @@
 2Dgraphics:Animation a rdfs:Class ;
     rdfs:label "Animation"@en ;
     rdfs:comment "Each action (e.g. movement) can have an animation associated with it. The animation is concerned with the instructions for graphical representation of the action."@en .
+
+2Dgraphics:hasTexture a rdf:Property ;
+    rdfs:label "hasTexture"@en ;
+    rdfs:comment "Indicates that the linked texture asset should be used to represent the object" .
