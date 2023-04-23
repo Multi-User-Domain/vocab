@@ -11,6 +11,21 @@
 
 @prefix muddialogue: <#> .
 
+# classes and properties for describing the context of a dialogue
+
+muddialogue:Interaction a rdfs:Class ;
+    rdfs:label "Interaction"@en ;
+    rdfs:label "Échange"@fr ;
+    rdfs:comment "Describes the context of a dialogue"@en ;
+    rdfs:comment "La contexte d'un échange entre plusieurs acteurs"@fr .
+
+muddialogue:inkFile a rdf:Property ;
+    rdfs:label "Ink File"@en ;
+    rdfs:comment "Ink is a syntax for writing a script for an interaction"@en ;
+    rdfs:range schema:URL .
+
+# classes and properties for describing messages in a dialogue
+
 muddialogue:Message a rdfs:Class ;
     rdfs:label "Dialogue Message"@en ;
     rdfs:comment ""@en .
