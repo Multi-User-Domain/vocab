@@ -7,6 +7,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 
 @prefix muddialogue: <#> .
@@ -23,6 +24,39 @@ muddialogue:inkFile a rdf:Property ;
     rdfs:label "Ink File"@en ;
     rdfs:comment "Ink is a syntax for writing a script for an interaction"@en ;
     rdfs:range schema:URL .
+
+# NOTE: for deciding whether an interaction can be used in a scene, we can use shapes.
+# To model this use the property mudlogic:parameterConstraintsShape
+
+# Bindings: connecting a graph to actors within a game scene
+
+muddialogue:Binding a rdfs:Class ;
+    rdfs:label "Binding"@en ;
+    rdfs:comment "A resource which is bound to the input or output graph of an ink dialogue"@en .
+
+muddialogue:InkVariableBinding a rdfs:Class ;
+    rdfs:subClassOf muddialogue:Binding ;
+    rdfs:label "Ink Variable Binding"@en ;
+    rdfs:comment "A binding to a variable used in an Ink story"@en .
+
+muddialogue:inkVariableName a rdf:Property ;
+    rdfs:label "inkVariableName"@en ;
+    rdfs:comment "The value indicates the name of the variable used in a connected Ink story"@en ;
+    rdfs:domain muddialogue:InkVariableBinding ;
+    rdfs:range xsd:string .
+
+muddialogue:hasBindings a rdf:Property ;
+    rdfs:label "hasBindings"@en ;
+    rdfs:comment "Contains bindings used to map game logic to the Interaction represented in Linked Data"@en ;
+    rdfs:domain muddialogue:Interaction ;
+    # TODO: add formal constraint that container should contain only Binding subclasses
+    rdfs:range ldp:Container .
+
+muddialogue:bindingMadeToShape a rdf:Property ;
+    rdfs:label "bindingMadeToShape"@en ;
+    rdfs:comment "A shape which describes the object which the binding should be made to"@en ;
+    rdfs:domain muddialogue:Binding ;
+    rdfs:range sh:NodeShape .
 
 # classes and properties for describing messages in a dialogue
 
