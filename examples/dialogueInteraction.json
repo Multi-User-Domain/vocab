@@ -2,7 +2,7 @@
     "@context": {
         "muddialogue":"https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/muddialogue.ttl#"
     },
-    "@id":"https://calum.inrupt.net/public/utopian-dialogue/ospreyWithersDialogue.json",
+    "@id":"https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/examples/dialogueInteraction.json",
     "@type":"https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/muddialogue.ttl#Interaction",
     "muddialogue:inkFile":"https://calum.inrupt.net/public/utopian-dialogue/demoInteraction.ink.json",
     "muddialogue:hasBindings": [
