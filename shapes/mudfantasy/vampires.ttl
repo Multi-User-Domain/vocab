@@ -1,0 +1,17 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+@prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
+@prefix mudfantasy: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#> .
+
+@prefix vampireshapes: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/mudfantasy/vampires.ttl#> .
+
+vampireshapes:202304ParisVampire a sh:NodeShape ;
+    sh:targetClass mudchar:Character ;
+    sh:property [
+		sh:name "Species" ;
+        sh:description "Must have one species of vampire" ;
+		sh:path mud:species ;
+        sh:minCount 1 ;
+        sh:in ( mudfantasy:Vampire "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#Vampire" ) ;
+	] .
