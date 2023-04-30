@@ -12,6 +12,16 @@
 
 @prefix muditems: <#> .
 
+muditems: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Multi-User Domain Core Item Collection" ;
+    dcterms:description """
+    Common objects and items used in a game world
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
 muditems:SingleUseItem a rdfs:Class ;
     rdfs:subClassOf vgo:Item ;
     rdfs:label "Single Use Item"@en ;

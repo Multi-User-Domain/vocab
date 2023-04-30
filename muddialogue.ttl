@@ -12,6 +12,16 @@
 
 @prefix muddialogue: <#> .
 
+muddialogue: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Multi-User Domain Dialogue ontology" ;
+    dcterms:description """
+    Vocabulary used in the definitions of decentralised parts of dialogue with characters
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
 # classes and properties for describing the context of a dialogue
 
 muddialogue:Interaction a rdfs:Class ;

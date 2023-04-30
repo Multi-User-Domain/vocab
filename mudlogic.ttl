@@ -12,6 +12,16 @@
 
 @prefix mudlogic: <#> .
 
+mudlogic: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Multi-User Domain Logic ontology" ;
+    dcterms:description """
+    Vocabulary defines Tasks and Actions conducted by agents in a game world.
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
 mudlogic:Action a time:Instant ;
     rdfs:subClassOf time:Instant ;
     rdfs:label "Action"@en ;
