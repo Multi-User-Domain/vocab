@@ -16,14 +16,10 @@ mudcombat: rdf:type owl:Ontology ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://calum.inrupt.net/profile/card#me> .
 
-mudcombat:PointResourceType a rdfs:Class ;
-    rdfs:label "Point Resource Type"@en ;
-    rdfs:comment "A resource type measured in points, for example health or mana"@en .
-    # use n:fn for point resource type name
-
 mudcombat:PointResource a rdfs:Class ;
     rdfs:label "PointResource"@en ;
     rdfs:comment "A point resource like Health or Mana. Expected to be an integer or a decimal"@en .
+    # use n:fn for point resource type name
 
 mudcombat:maximumP a rdf:Property ;
     rdfs:label "maximumP"@en ;
@@ -45,23 +41,23 @@ mudcombat:hasPointResourceStats a rdf:Property ;
 # instances for commonly used point resource types
 
 mudcombat:HealthPoints a rdfs:Class ;
-    rdfs:subClassOf mudcombat:PointResourceType ;
+    rdfs:subClassOf mudcombat:PointResource ;
     rdfs:label "Health Points"@en ;
     rdfs:comment "Health Points, represents life force"@en .
 
 mudcombat:hasHealthPoints a rdf:Property ;
-    rdfs:subPropertyOf mudcombat:PointResourceType ;
+    rdfs:subPropertyOf mudcombat:PointResource ;
     rdfs:label "hasHealthPoints"@en ;
     rdfs:comment "Health Points. Has its own property because it's commonly used"@en ;
     rdfs:range mudcombat:HealthPoints .
 
-mudcombat:ManaPoints a rdfs:Class ;
-    rdfs:subClassOf mudcombat:PointResourceType ;
+mudcombat:ManaPointsType a rdfs:Class ;
+    rdfs:subClassOf mudcombat:hasPointResourceStats ;
     rdfs:label "Mana Points"@en ;
     rdfs:comment "Mana Points, represents magical force"@en .
 
 mudcombat:hasManaPoints a rdf:Property ;
-    rdfs:subPropertyOf mudcombat:PointResourceType ;
+    rdfs:subPropertyOf mudcombat:hasPointResourceStats ;
     rdfs:label "hasManaPoints"@en ;
     rdfs:comment "Mana Points. Has its own property because it's commonly used"@en ;
     rdfs:range mudcombat:ManaPoints .
