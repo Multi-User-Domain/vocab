@@ -40,7 +40,7 @@ Common objects and items used in a game world
 
 ## MUD Logic
 
-Currently stores information about Tasks and Actions. Relys on [solid-terms](https://github.com/solid/vocab) to model things like consequences (updates to graphs)
+Vocabulary defines Tasks and Actions conducted by agents in a game world
 
 ## MUD Content
 
@@ -53,6 +53,10 @@ Vocabulary used in the definitions of decentralised parts of dialogue with chara
 ## MUD Fantasy
 
 Vocabulary containing terms for commonly used fantasy themes
+
+## MUD Combat
+
+Provides definitions for a commonly used combat system mechanics
 
 # Contributing
 

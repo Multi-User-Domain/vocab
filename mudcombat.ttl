@@ -1,0 +1,67 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix mudcombat: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#> .
+
+mudcombat: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Multi-User Domain Combat ontology" ;
+    dcterms:description """
+    Provides definitions for a commonly used combat system mechanics
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
+mudcombat:PointResourceType a rdfs:Class ;
+    rdfs:label "Point Resource Type"@en ;
+    rdfs:comment "A resource type measured in points, for example health or mana"@en .
+    # use n:fn for point resource type name
+
+mudcombat:PointResource a rdfs:Class ;
+    rdfs:label "PointResource"@en ;
+    rdfs:comment "A point resource like Health or Mana. Expected to be an integer or a decimal"@en .
+
+mudcombat:maximumP a rdf:Property ;
+    rdfs:label "maximumP"@en ;
+    rdfs:comment "The maximum value of the point resource"@en ;
+    rdfs:domain mudcombat:PointResource ;
+    rdfs:range xsd:Integer, xsd:Decimal .
+
+mudcombat:currentP a rdf:Property ;
+    rdfs:label "currentP"@en ;
+    rdfs:comment "The current value of the point resource" ;
+    rdfs:domain mudcombat:PointResource ;
+    rdfs:range xsd:Integer, xsd:Decimal .
+
+mudcombat:hasPointResourceStats a rdf:Property ;
+    rdfs:label "hasPointResourceStats"@en ;
+    rdfs:comment "Indicates that the agent has a point resource"@en ;
+    rdfs:range mudcombat:PointResource .
+
+# instances for commonly used point resource types
+
+mudcombat:HealthPoints a rdfs:Class ;
+    rdfs:subClassOf mudcombat:PointResourceType ;
+    rdfs:label "Health Points"@en ;
+    rdfs:comment "Health Points, represents life force"@en .
+
+mudcombat:hasHealthPoints a rdf:Property ;
+    rdfs:subPropertyOf mudcombat:PointResourceType ;
+    rdfs:label "hasHealthPoints"@en ;
+    rdfs:comment "Health Points. Has its own property because it's commonly used"@en ;
+    rdfs:range mudcombat:HealthPoints .
+
+mudcombat:ManaPoints a rdfs:Class ;
+    rdfs:subClassOf mudcombat:PointResourceType ;
+    rdfs:label "Mana Points"@en ;
+    rdfs:comment "Mana Points, represents magical force"@en .
+
+mudcombat:hasManaPoints a rdf:Property ;
+    rdfs:subPropertyOf mudcombat:PointResourceType ;
+    rdfs:label "hasManaPoints"@en ;
+    rdfs:comment "Mana Points. Has its own property because it's commonly used"@en ;
+    rdfs:range mudcombat:ManaPoints .
