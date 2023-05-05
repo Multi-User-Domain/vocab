@@ -30,8 +30,3 @@ mudchar:Character a rdfs:Class ;
     rdfs:subClassOf vgo:Character ;
     rdfs:label "Character"@en ;
     rdfs:label "Personnage"@fr .
-
-mudchar:hasTask a rdf:Property ;
-    rdfs:label "hasTask"@en ;
-    rdfs:comment "a mudlogic:Task that a Thing is pre-occupied with" ;
-    rdfs:range mudlogic:Task .

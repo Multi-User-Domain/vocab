@@ -141,3 +141,8 @@ mudlogic:actionDiscoveryEndpoint a rdf:Property ;
     rdfs:comment "The URL where a supported action discovery endpoint can be found"@en ;
     rdfs:domain mud:Configuration ;
     rdfs:range schema:URL .
+
+mudlogic:hasOngoingTask a rdf:Property ;
+    rdfs:label "hasOngoingTask"@en ;
+    rdfs:comment "a mudlogic:Task that a Thing is pre-occupied with" ;
+    rdfs:range mudlogic:Task .
