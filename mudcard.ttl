@@ -1,6 +1,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -32,3 +33,17 @@ mudcard:description a rdf:Property ;
 mudcard:playTarget a rdf:Property ;
     rdfs:label "playTarget"@en ;
     rdfs:comment "Instructs the game how the card should be played (e.g. on a board, on a character, on nothing)"@en .
+
+mudcard:Deck a rdfs:Class ;
+    rdfs:label "Deck"@en ;
+    rdfs:comment "A deck of cards"@en .
+
+mudcard:cardsAtUrl a rdf:Property ;
+    rdfs:label "cardsAtUrl"@en ;
+    rdfs:comment "Indicates a URL which when followed defines a list of cards belonging to the deck"@en ;
+    rdfs:range schema:URL .
+
+mudcard:hasDeck a rdf:Property ;
+    rdfs:label "hasDeck"@en ;
+    rdfs:comment "Indicates the subject possesses the object deck"@en ;
+    rdfs:range mudcard:Deck .
