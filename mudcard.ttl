@@ -44,6 +44,11 @@ mudcard:cardsAtUrl a rdf:Property ;
     rdfs:comment "Indicates a URL which when followed defines a list of cards belonging to the deck"@en ;
     rdfs:range schema:URL .
 
+mudcard:hasCards a rdf:Property ;
+    rdfs:label "hasCards"@en ;
+    rdfs:comment "Possession of a list of cards. Intended for decks to indicate their membership"@en ;
+    rdfs:range ldp:Container .
+
 mudcard:hasDeck a rdf:Property ;
     rdfs:label "hasDeck"@en ;
     rdfs:comment "Indicates the subject possesses the object deck"@en ;
