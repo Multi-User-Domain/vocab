@@ -21,7 +21,13 @@ mud: rdf:type owl:Ontology ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://calum.inrupt.net/profile/card#me> .
 
-mudworld:Region a mud:Locatable ;
+mudworld:Location a rdfs:Class ;
+    rdfs:subClassOf mud:Locatable ;
+    rdfs:label "Location"@en ;
+    rdfs:label "Endroit"@fr ;
+    rdfs:comment "A generic setting for a scene"@en .
+
+mudworld:Region a rdfs:Class ;
     rdfs:subClassOf mud:Locatable ;
     rdfs:label "Region"@en ;
     rdfs:label "Région"@fr .
