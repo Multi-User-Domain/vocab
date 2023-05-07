@@ -3,6 +3,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
 
 @prefix mudcombat: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#> .
 
@@ -61,3 +62,37 @@ mudcombat:hasManaPoints a rdf:Property ;
     rdfs:label "hasManaPoints"@en ;
     rdfs:comment "Mana Points. Has its own property because it's commonly used"@en ;
     rdfs:range mudcombat:ManaPoints .
+
+# Attacks - points consequences modelled using actions/tasks
+
+mudcombat:AttackDetails a rdfs:Class ;
+    rdfs:label "AttackDetails"@en ;
+    rdfs:comment "Attacks are modelled using actions/tasks, with additional details for their point consequences"@en .
+
+mudcombat:hasAttackDetails a rdf:Property ;
+    rdfs:label "hasAttackDetails"@en ;
+    rdfs:comment "Property on action/task indicates the straightforward consequences on points systems"@en ;
+    rdfs:range mudcombat:AttackDetails .
+
+mudcombat:fixedDamage a rdf:Property ;
+    rdfs:label "fixedDamage"@en ;
+    rdfs:comment "The attack does fixed damage"@en ;
+    rdfs:domain mudcombat:AttackDetails ;
+    rdfs:range xsd:Decimal .
+
+mudcombat:minDamage a rdf:Property ;
+    rdfs:label "minDamage"@en ;
+    rdfs:comment "The attack does variable damage and this is the minimum"@en ;
+    rdfs:domain mudcombat:AttackDetails ;
+    rdfs:range xsd:Decimal .
+
+mudcombat:maxDamage a rdf:Property ;
+    rdfs:label "maxDamage"@en ;
+    rdfs:comment "The attack does variable damage and this is the maximum"@en ;
+    rdfs:domain mudcombat:AttackDetails ;
+    rdfs:range xsd:Decimal .
+
+mudcombat:attackDamagesPoints a rdf:Property ;
+    rdfs:label "attackDamagesPoints"@en ;
+    rdfs:comment "Indicates that an attack (an action/task from mudlogic) will damage a point resource with the type indicated in the URL"@en ;
+    rdfs:range schema:URL .
