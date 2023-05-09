@@ -16,6 +16,15 @@
 
 @prefix twt2023: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/games/twt2023.ttl#> .
 
+twt2023:RecordedHistory a rdfs:Class ;
+    rdfs:label "Recorded History"@en ;
+    rdfs:comment "A class for recording history in the world"@en .
+
+twt2023:hasRecordedHistory a rdf:Property ;
+    rdfs:label "hasRecordedHistory"@en ;
+    rdfs:comment "Intended for world - the log of what happens in the world"@en ;
+    rdfs:range ldp:Container .
+
 twt2023:lordOfRegion a rdf:Property ;
     rdfs:label "Lord of Region"@en ;
     rdfs:comment "Indicates that the subject character is the lord of the object region"@en ;
