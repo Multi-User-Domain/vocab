@@ -94,3 +94,27 @@ mudworld:hasMapInhabitants a rdf:Property ;
 mudworld:inhabitantData a rdf:Property ;
     rdfs:label "inhabitantData"@en ;
     rdfs:comment "points to an object which describes the inhabitant data (e.g. a character or building)"@en .
+
+# Populations
+# use the mud:species property to indicate which species the population represents
+
+mudworld:Population a rdfs:Class ;
+    rdfs:label "Population"@en ;
+    rdfs:label "Population"@fr ;
+    rdfs:comment "A population of a species."@en ;
+    rdfs:comment "Une population d'une espèce."@fr .
+
+mudworld:populationNumber a rdf:Property ;
+    rdfs:label "Population Number"@en ;
+    rdfs:label "Nombre Population"@fr ;
+    rdfs:comment "The integer number of a population."@en ;
+    rdfs:comment "Le nombre entier de la population."@fr ;
+    rdfs:domain mudworld:Population ;
+    rdfs:range xsd:integer .
+
+mudworld:hasPopulations a rdf:Property ;
+    rdfs:label "hasPopulations"@en ;
+    rdfs:label "hasPopulations"@fr ;
+    rdfs:comment "Indicates that the subject thing (e.g. Region) has the populations of the object ldp:Container"@en ;
+    rdfs:comment "Indique que le sujet (e.g. Région), a des populations stockées dans l'objet ldp:Container"@fr ;
+    rdfs:range ldp:Container .

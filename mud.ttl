@@ -99,13 +99,6 @@ mud:primaryImageContent a foaf:depiction ;
     rdfs:comment "The default depiction of a Thing"@en ;
     rdfs:domain owl:Thing .
 
-mud:population a rdf:Property ;
-    rdfs:label "Population"@en ;
-    rdfs:label "Population"@fr ;
-    rdfs:comment "The number of (human) people residing in a settlement."@en ;
-    rdfs:comment "Le nombre de personnes (humains) résidant dans une ville."@fr ;
-    rdfs:range xsd:integer .
-
 mud:ownedBy a rdf:Property ;
     rdfs:label "owned by"@en ;
     rdfs:label "appartenant de"@fr ;
