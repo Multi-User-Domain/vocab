@@ -1,0 +1,23 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vgo: <http://purl.org/net/videogameontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+@prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
+@prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
+@prefix mudcard: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcard.ttl#> .
+@prefix mudworld: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudworld.ttl#> .
+
+@prefix twt2023: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/games/twt2023.ttl#> .
+
+twt2023:lordOfRegion a rdf:Property ;
+    rdfs:label "Lord of Region"@en ;
+    rdfs:comment "Indicates that the subject character is the lord of the object region"@en ;
+    rdfs:domain mudchar:Character ;
+    rdfs:range mudworld:Region .
