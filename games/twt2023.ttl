@@ -21,3 +21,8 @@ twt2023:lordOfRegion a rdf:Property ;
     rdfs:comment "Indicates that the subject character is the lord of the object region"@en ;
     rdfs:domain mudchar:Character ;
     rdfs:range mudworld:Region .
+
+twt2023:huntsInRegion a rdf:Property ;
+    rdfs:label "feedsInRegion"@en ;
+    rdfs:comment "Indicates that the subject uses a list of regions (regularly) to hunt"@en ;
+    rdfs:range ldp:Container .
