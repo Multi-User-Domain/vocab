@@ -64,13 +64,6 @@ mud:Locatable a rdfs:Class ;
     rdfs:label "Locatable Place"@en ;
     rdfs:comment "A parent class for all classes in which a Party can be"@en .
 
-mud:Settlement a mud:Locatable ;
-    rdfs:subClassOf mud:Locatable ;
-    rdfs:label "Settlement"@en ;
-    rdfs:label "Ville"@fr ;
-    rdfs:comment "This class has been deprecated."@en ;
-    owl:deprecated true .
-
 mud:Building a mud:Locatable ;
     rdfs:subClassOf mud:Locatable ;
     rdfs:label "Building"@en ;
@@ -95,12 +88,6 @@ mud:species a rdf:Property ;
     rdfs:comment "A property for Things with a mud:Species (e.g. mud:Human)"@en ;
     rdfs:range mud:Species, wd:Q16521 . # Q16521 is WikiData's Taxon class
 
-mud:hasBuilding a rdf:Property ;
-    rdfs:label "hasBuilding"@en ;
-    rdfs:comment "This property has been deprecated."@en ;
-    rdfs:range mud:Building ;
-    owl:deprecated true .
-
 mud:primaryTextContent a rdf:Property ;
     rdfs:label "Primary Text Content"@en ;
     rdfs:comment "The default text description of an object"@en ;
@@ -115,8 +102,8 @@ mud:primaryImageContent a foaf:depiction ;
 mud:population a rdf:Property ;
     rdfs:label "Population"@en ;
     rdfs:label "Population"@fr ;
-    rdfs:comment "The number of people residing in a settlement."@en ;
-    rdfs:comment "Le nombre de personnes résidant dans une ville."@fr ;
+    rdfs:comment "The number of (human) people residing in a settlement."@en ;
+    rdfs:comment "Le nombre de personnes (humains) résidant dans une ville."@fr ;
     rdfs:range xsd:integer .
 
 mud:ownedBy a rdf:Property ;
