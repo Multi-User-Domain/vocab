@@ -119,6 +119,11 @@ mudcombat:hasResistances a rdf:Property ;
     rdfs:comment "Indicates that the subject has a set of Resistances to damage types"@en ;
     rdfs:range ldp:Container .
 
+mudcombat:resistanceValue a rdf:Property ;
+    rdfs:label "resistanceValue"@en ;
+    rdfs:comment "The value of the resistance in damage percentage -1.0 to 1.0. For weakness set a negative value"@en ;
+    rdfs:range xsd:Decimal .
+
 # Some basic types of damage to start with
 
 mudcombat:PhysicalDamage a mudcombat:DamageType .
