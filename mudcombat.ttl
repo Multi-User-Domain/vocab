@@ -92,6 +92,17 @@ mudcombat:maxDamage a rdf:Property ;
     rdfs:domain mudcombat:AttackDetails ;
     rdfs:range xsd:Decimal .
 
+mudcombat:recurringDamage a rdf:Property ;
+    rdfs:label "recurringDamage"@en ;
+    rdfs:comment "Indicates the value of fixed damage done on a recurring basis"@en ;
+    rdfs:domain mudcombat:AttackDetails ;
+    rdfs:range xsd:Decimal .
+
+mudcombat:recurringDamageDuration a rdf:Property ;
+    rdfs:label "recurringDamageDuration"@en ;
+    rdfs:comment "Indicates the number of seconds the recurring damage goes on for"@en ;
+    rdfs:range xsd:Integer .
+
 mudcombat:attackDamagesPoints a rdf:Property ;
     rdfs:label "attackDamagesPoints"@en ;
     rdfs:comment "Indicates that an attack (an action/task from mudlogic) will damage a point resource with the type indicated in the URL"@en ;
