@@ -96,3 +96,36 @@ mudcombat:attackDamagesPoints a rdf:Property ;
     rdfs:label "attackDamagesPoints"@en ;
     rdfs:comment "Indicates that an attack (an action/task from mudlogic) will damage a point resource with the type indicated in the URL"@en ;
     rdfs:range schema:URL .
+
+# Attacks deal types of damage
+
+mudcombat:DamageType a rdfs:Class ;
+    rdfs:label "Damage Type"@en ;
+    rdfs:comment "The type of damage (e.g. physical, poison, fire)"@en .
+
+mudcombat:typeDamage a rdf:Property ;
+    rdfs:label "typeDamage"@en ;
+    rdfs:comment "Indicates the type of damage done by an attack"@en ;
+    rdfs:range mudcombat:DamageType .
+
+# Characters can have resistance to damage types
+
+mudcombat:DamageResistance a rdfs:Class ;
+    rdfs:label "Damage Resistance"@en ;
+    rdfs:comment "Like DamageType, but protection against"@en .
+
+mudcombat:hasResistances a rdf:Property ;
+    rdfs:label "hasResistances"@en ;
+    rdfs:comment "Indicates that the subject has a set of Resistances to damage types"@en ;
+    rdfs:range ldp:Container .
+
+# Some basic types of damage to start with
+
+mudcombat:PhysicalDamage a mudcombat:DamageType .
+mudcombat:FireDamage a mudcombat:DamageType .
+mudcombat:EarthDamage a mudcombat:DamageType .
+mudcombat:WaterDamage a mudcombat:DamageType .
+mudcombat:AirDamage a mudcombat:DamageType .
+mudcombat:RadiantDamage a mudcombat:DamageType .
+mudcombat:NecroticDamage a mudcombat:DamageType .
+mudcombat:PoisonDamage a mudcombat:DamageType .
