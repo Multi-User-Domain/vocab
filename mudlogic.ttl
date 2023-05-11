@@ -59,6 +59,11 @@ mudlogic:recursAfterSeconds a rdf:Property ;
     rdfs:domain mudlogic:Effect ;
     rdfs:range xsd:Integer .
 
+mudlogic:activeEffects a rdf:Property ;
+    rdfs:label "activeEffects"@en ;
+    rdfs:comment "An ldp:Container of the Effects which are actively recurring on the subject"@en ;
+    rdfs:range ldp:Container .
+
 # Bindings: Action parameters
 
 mudlogic:ActionBinding a rdfs:Class ;
