@@ -22,12 +22,12 @@ mudlogic: rdf:type owl:Ontology ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://calum.inrupt.net/profile/card#me> .
 
-mudlogic:Action a time:Instant ;
+mudlogic:Action a rdfs:Class ;
     rdfs:subClassOf time:Instant ;
     rdfs:label "Action"@en ;
     rdfs:comment "An Instant Action - one which is completed by an Actor to achieve some end state"@en .
 
-mudlogic:Task a time:Interval ;
+mudlogic:Task a rdfs:Class ;
     rdfs:subClassOf time:Interval ;
     rdfs:label "Task"@en ;
     rdfs:comment "An Interval which is being completed by an Actor to achieve some end state"@en .
@@ -36,6 +36,11 @@ mudlogic:Transit a mudlogic:Task ;
     rdfs:subclassOf mudlogic:Task ;
     rdfs:label "Transit Task"@en ;
     rdfs:comment "A Task which models the changing of location"@en .
+
+mudlogic:Effect a rdfs:Class ;
+    rdfs:subClassOf mudlogic:Action ;
+    rdfs:label "Effect"@en ;
+    rdfs:commnet "An effect is a type of action which is recurring (e.g. damage health from poison)"@en .
 
 mudlogic:actAt a rdf:Property ;
     rdfs:label "actAt"@en ;
@@ -47,6 +52,12 @@ mudlogic:parameterConstraintsShape a rdf:Property ;
     rdfs:label "Parameter Constraints Shape"@en ;
     rdfs:comment "A shape which is used for validating input parameters"@en ;
     rdfs:range sh:NodeShape .
+
+mudlogic:recursAfterSeconds a rdf:Property ;
+    rdfs:label "recursAfterSeconds"@en ;
+    rdfs:comment "Indicates the number of seconds to wait before implementing the effect changes again"@en ;
+    rdfs:domain mudlogic:Effect ;
+    rdfs:range xsd:Integer .
 
 # Bindings: Action parameters
 
@@ -116,14 +127,12 @@ mudlogic:inserts a rdf:Property ;
     rdfs:label "Inserts"@en ;
     rdfs:comment "A pointer to (clone of a) Resource holding properties which should be inserted to a Graph during the change"@en ;
     rdfs:domain mudlogic:Operation ;
-    # TODO: add formal constraint that container should contain only ActionBinding subclasses
     rdfs:range ldp:Container .
 
 mudlogic:deletes a rdf:Property ;
     rdfs:label "Deletes"@en ;
     rdfs:comment "A pointer to a (clone of a) Resource holding properties which should be deleted in a Graph during the change"@en ;
     rdfs:domain mudlogic:Operation ;
-    # TODO: add formal constraint that container should contain only ActionBinding subclasses
     rdfs:range ldp:Container .
 
 mudlogic:postsOnComplete a rdf:Property ;
