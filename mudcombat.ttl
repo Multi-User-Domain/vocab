@@ -108,6 +108,14 @@ mudcombat:attackDamagesPoints a rdf:Property ;
     rdfs:comment "Indicates that an attack (an action/task from mudlogic) will damage a point resource with the type indicated in the URL"@en ;
     rdfs:range schema:URL .
 
+# Attacks can imbue effects on their target
+# NOTE: this can be done via action consequences but is offered in this ontology as a shortcut
+
+mudcombat:imbuesEffects a rdf:Property ;
+    rdfs:label "imbuesEffects"@en ;
+    rdfs:comment "When the attack is completed it might activate mudlogic:Effects on the target"@en ;
+    rdfs:range ldp:Container .
+
 # Attacks deal types of damage
 
 mudcombat:DamageType a rdfs:Class ;
