@@ -143,5 +143,5 @@ mudcombat:EarthDamage a mudcombat:DamageType .
 mudcombat:WaterDamage a mudcombat:DamageType .
 mudcombat:AirDamage a mudcombat:DamageType .
 mudcombat:RadiantDamage a mudcombat:DamageType .
-mudcombat:NecroticDamage a mudcombat:DamageType .
+mudcombat:NecraticDamage a mudcombat:DamageType .
 mudcombat:PoisonDamage a mudcombat:DamageType .
