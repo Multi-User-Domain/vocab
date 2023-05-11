@@ -59,6 +59,11 @@ mudlogic:recursAfterSeconds a rdf:Property ;
     rdfs:domain mudlogic:Effect ;
     rdfs:range xsd:Integer .
 
+mudlogic:expiresAfterOccurences a rdf:Property ;
+    rdfs:label "expiresAfterOccurences"@en ;
+    rdfs:comment "Indicates the number of occurences before the effect expires"@en ;
+    rdfs:range xsd:Integer .
+
 mudlogic:activeEffects a rdf:Property ;
     rdfs:label "activeEffects"@en ;
     rdfs:comment "An ldp:Container of the Effects which are actively recurring on the subject"@en ;
