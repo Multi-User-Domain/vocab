@@ -35,3 +35,22 @@ twt2023:huntsInRegion a rdf:Property ;
     rdfs:label "feedsInRegion"@en ;
     rdfs:comment "Indicates that the subject uses a list of regions (regularly) to hunt"@en ;
     rdfs:range ldp:Container .
+
+twt2023:generatesCardFrom a rdf:Property ;
+    rdfs:label "generatesCardFrom"@en ;
+    rdfs:comment "Specifically for card generating Actions and Effects, indicates the possible cards to generate from"@en ;
+    rdfs:domain mudlogic:Action ;
+    rdfs:range ldp:Container .
+
+# TODO: not implemented Godot side
+#twt2023:generatesCardTo a rdf:Property ;
+#    rdfs:label "generatesCardTo"@en ;
+#    rdfs:comment "Where the card is generated to. Expected to be a player, i.e. into my deck or that of my opponent"@en ;
+#    rdfs:domain mudlogic:Action .
+
+twt2023:generateCardProbability a rdf:Property ;
+    rdfs:label "generateCardProbability"@en ;
+    rdfs:comment "on the Action, indicates how likely it is that a card will be selected at all"@en ;
+    rdfs:range xsd:Decimal .
+
+twt2023:DuplicateSelf a mudlogic:Effect .
