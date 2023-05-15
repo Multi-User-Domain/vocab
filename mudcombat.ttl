@@ -116,6 +116,20 @@ mudcombat:imbuesEffects a rdf:Property ;
     rdfs:comment "When the attack is completed it might activate mudlogic:Effects on the target"@en ;
     rdfs:range ldp:Container .
 
+# some effects can be applied at specific times
+
+mudcombat:killTriggersActions a rdf:Property ;
+    rdfs:label "killTriggersActions"@en ;
+    rdfs:comment "When the subject makes a kill, it will trigger these effects"@en ;
+    rdfs:domain mudchar:Character ;
+    rdfs:range ldp:Container .
+
+mudcombat:deathTriggersActions a rdf:Property ;
+    rdfs:label "deathTriggersActions"@en ;
+    rdfs:comment "When the subject dies, it will trigger these effects"@en ;
+    rdfs:domain mudchar:Character ;
+    rdfs:range ldp:Container .
+
 # Attacks deal types of damage
 
 mudcombat:DamageType a rdfs:Class ;
