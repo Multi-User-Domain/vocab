@@ -3,6 +3,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
 @prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
 
 @prefix mudcombat: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#> .
@@ -74,6 +75,11 @@ mudcombat:hasAttackDetails a rdf:Property ;
     rdfs:comment "Property on action/task indicates the straightforward consequences on points systems"@en ;
     rdfs:range mudcombat:AttackDetails .
 
+mudcombat:hasSpellDetails a rdf:Property ;
+    rdfs:subPropertyOf mudcombat:hasAttackDetails ;
+    rdfs:label "hasSpellDetails"@en ;
+    rdfs:comment "Sub-property of attack details - more generic, because the spell might be made against a non-enemy"@en .
+
 mudcombat:fixedDamage a rdf:Property ;
     rdfs:label "fixedDamage"@en ;
     rdfs:comment "The attack does fixed damage"@en ;
@@ -106,6 +112,11 @@ mudcombat:recurringDamageDuration a rdf:Property ;
 mudcombat:attackDamagesPoints a rdf:Property ;
     rdfs:label "attackDamagesPoints"@en ;
     rdfs:comment "Indicates that an attack (an action/task from mudlogic) will damage a point resource with the type indicated in the URL"@en ;
+    rdfs:range schema:URL .
+
+mudcombat:recoversPoints a rdf:Property ;
+    rdfs:label "recoversPoints"@en ;
+    rdfs:comment "Indicates that the spell will recover a point resource with the type indicated in the URL"@en ;
     rdfs:range schema:URL .
 
 # Attacks can imbue effects on their target
