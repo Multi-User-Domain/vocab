@@ -6,7 +6,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix vgo: <http://purl.org/net/videogameontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 @prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
@@ -41,6 +40,11 @@ twt2023:generatesCardFrom a rdf:Property ;
     rdfs:comment "Specifically for card generating Actions and Effects, indicates the possible cards to generate from"@en ;
     rdfs:domain mudlogic:Action ;
     rdfs:range ldp:Container .
+
+twt2023:maximumUses a rdf:Property ;
+    rdfs:label "maximumUses"@en ;
+    rdfs:comment "Indicates that an action can only be used a certain number of times"@en ;
+    rdfs:range xsd:Integer .
 
 # TODO: not implemented Godot side
 #twt2023:generatesCardTo a rdf:Property ;
