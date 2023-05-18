@@ -57,4 +57,9 @@ twt2023:generateCardProbability a rdf:Property ;
     rdfs:comment "on the Action, indicates how likely it is that a card will be selected at all"@en ;
     rdfs:range xsd:Decimal .
 
+twt2023:onGeneratedMessage a rdf:Property ;
+    rdfs:label "onGeneratedMessage"@en ;
+    rdfs:comment "an optional message when the card is generated, announcing its' entrance"@en ;
+    rdfs:range xsd:String .
+
 twt2023:DuplicateSelf a mudlogic:Effect .
