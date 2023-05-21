@@ -168,6 +168,29 @@ mudcombat:resistanceValue a rdf:Property ;
     rdfs:comment "The value of the resistance in damage percentage -1.0 to 1.0. For weakness set a negative value"@en ;
     rdfs:range xsd:Decimal .
 
+# Characters can have defences against damage (this is for dodge, magic shields etc)
+
+mudcombat:DefenceRoll a rdfs:Class ;
+    rdfs:label "Defence Roll"@en ;
+    rdfs:comment "A defence roll is triggered before taking damage. It can block all kinds of damage and can have a chance to succeed"@en .
+
+mudcombat:hasDefenceRolls a rdf:Property ;
+    rdfs:label "hasDefenceRolls"@en ;
+    rdfs:comment "A container of possible defence rolls"@en ;
+    rdfs:range ldp:Container .
+
+mudcombat:onSuccessDamageResistance a rdf:Property ;
+    rdfs:label "defenceRollSuccessRate"@en ;
+    rdfs:comment "The percentage -0.1 - 1.0 of damage saved on a successful roll. A negative value will actually damage the character more greatly"@en ;
+    rdfs:domain mudcombat:DefenceRoll ;
+    rdfs:range xsd:Decimal .
+
+mudcombat:defenceRollSuccessRate a rdf:Property ;
+    rdfs:label "defenceRollSuccessRate"@en ;
+    rdfs:comment "The percentage 0.0 - 1.0 for the defence roll to succeed"@en ;
+    rdfs:domain mudcombat:DefenceRoll ;
+    rdfs:range xsd:Decimal .
+
 # Some basic types of damage to start with
 
 mudcombat:PhysicalDamage a mudcombat:DamageType .
