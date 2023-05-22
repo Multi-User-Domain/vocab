@@ -179,12 +179,6 @@ mudcombat:hasDefenceRolls a rdf:Property ;
     rdfs:comment "A container of possible defence rolls"@en ;
     rdfs:range ldp:Container .
 
-mudcombat:onSuccessDamageResistance a rdf:Property ;
-    rdfs:label "defenceRollSuccessRate"@en ;
-    rdfs:comment "The percentage -0.1 - 1.0 of damage saved on a successful roll. A negative value will actually damage the character more greatly"@en ;
-    rdfs:domain mudcombat:DefenceRoll ;
-    rdfs:range xsd:Decimal .
-
 mudcombat:defenceRollSuccessRate a rdf:Property ;
     rdfs:label "defenceRollSuccessRate"@en ;
     rdfs:comment "The percentage 0.0 - 1.0 for the defence roll to succeed"@en ;
