@@ -44,6 +44,11 @@ muddialogue:Binding a rdfs:Class ;
     rdfs:label "Binding"@en ;
     rdfs:comment "A resource which is bound to the input or output graph of an ink dialogue"@en .
 
+muddialogue:boundTo a rdf:Property ;
+    rdfs:label "boundTo"@en ;
+    rdfs:comment "Once a binding is resolved, this property indicates the object the binding is made to"@en ;
+    rdfs:domain muddialogue:Binding .
+
 muddialogue:InkVariableBinding a rdfs:Class ;
     rdfs:subClassOf muddialogue:Binding ;
     rdfs:label "Ink Variable Binding"@en ;
