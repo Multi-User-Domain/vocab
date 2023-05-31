@@ -1,16 +1,67 @@
 {
     "@context": {
-        "muddialogue":"https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/muddialogue.ttl#"
+        "muddialogue":"https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/muddialogue.ttl#",
+        "n": "http://www.w3.org/2006/vcard/ns#"
     },
     "@id":"https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/examples/dialogueInteraction.json",
     "@type":"https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/muddialogue.ttl#Interaction",
+    "n:fn": "Vampire Encounter",
+    "n:hasNotes": "An encounter with a vampire",
     "muddialogue:inkFile":"https://calum.inrupt.net/public/utopian-dialogue/demoInteraction.ink.json",
     "muddialogue:hasBindings": [
         {
             "@id": "_:param_character_jsonld",
             "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/muddialogue.ttl#InkVariableBinding",
             "muddialogue:inkVariableName": "param_character_jsonld",
-            "muddialogue:bindingMadeToShape": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/mudfantasy/vampires.ttl#202304ParisVampire"
+            "muddialogue:bindingMadeToShape": {
+                "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/mudfantasy/vampires.ttl#202304ParisVampire",
+                "@type": [
+                    "http://www.w3.org/ns/shacl#NodeShape"
+                  ],
+                  "http://www.w3.org/ns/shacl#property": [
+                    {
+                        "@id": "_:ub2bL10C17",
+                        "http://www.w3.org/ns/shacl#description": [
+                            {
+                            "@value": "Must have one species of vampire"
+                            }
+                        ],
+                        "http://www.w3.org/ns/shacl#in": [
+                            {
+                            "@list": [
+                                {
+                                "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#Vampire"
+                                },
+                                {
+                                "@value": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#Vampire"
+                                }
+                            ]
+                            }
+                        ],
+                        "http://www.w3.org/ns/shacl#minCount": [
+                            {
+                            "@value": 1
+                            }
+                        ],
+                        "http://www.w3.org/ns/shacl#name": [
+                            {
+                            "@value": "Species"
+                            }
+                        ],
+                        "http://www.w3.org/ns/shacl#path": [
+                            {
+                            "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#species"
+                            }
+                        ]
+                    }
+                  ],
+                  "http://www.w3.org/ns/shacl#targetClass": [
+                    {
+                      "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#Character"
+                    }
+                  ]
+            }
         }
-    ]
+    ],
+    "muddialogue:generateNarrativeContextEndpoint": "https://api.realm.games.coop/ud/generateContext/"
 }
