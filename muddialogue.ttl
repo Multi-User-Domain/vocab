@@ -68,6 +68,12 @@ muddialogue:bindingMadeToShape a rdf:Property ;
     rdfs:domain muddialogue:Binding ;
     rdfs:range sh:NodeShape .
 
+muddialogue:generateNarrativeContextEndpoint a rdf:Property ;
+    rdfs:label "generateNarrativeContextEndpoint"@en ;
+    rdfs:comment "An optional link to an endpoint which can be used to generate/complete the graph context needed to run the Interaction"@en ;
+    rdfs:domain muddialogue:Interaction ;
+    rdfs:range schema:URL .
+
 # classes and properties for describing messages in a dialogue
 
 muddialogue:Message a rdfs:Class ;
