@@ -50,6 +50,13 @@ muddialogue:bindingIsUnique a rdf:Property ;
     rdfs:domain muddialogue:Binding ;
     rdfs:range xsd:boolean .
 
+# NOTE: shapes can only be applied to specific types AFAIK
+muddialogue:bindingToType a rdf:Property ;
+    rdfs:label "bindingToType"@en ;
+    rdfs:comment "Indicates the type of object the binding targets, e.g. mudchar:Character"@en ;
+    rdfs:domain muddialogue:Binding ;
+    rdfs:range schema:URL .
+
 muddialogue:boundTo a rdf:Property ;
     rdfs:label "boundTo"@en ;
     rdfs:comment "Once a binding is resolved, this property indicates the object the binding is made to"@en ;
