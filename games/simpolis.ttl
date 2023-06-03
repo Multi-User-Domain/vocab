@@ -19,7 +19,7 @@
 
 simpolis:Problem a rdfs:Class ;
     rdfs:label "Problem"@en ;
-    rdfs:label "Problemo"@es ;
+    rdfs:label "Problema"@es ;
     rdfs:label "Problème"@fr ;
     rdfs:comment "Models a problem that the AI needs to solve"@en .
 
