@@ -10,10 +10,18 @@
     "muddialogue:inkFile":"https://calum.inrupt.net/public/utopian-dialogue/demoInteraction.ink.json",
     "muddialogue:hasBindings": [
         {
+            "@id": "_:second_character_jsonld",
+            "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/muddialogue.ttl#InkVariableBinding",
+            "muddialogue:inkVariableName": "second_character_jsonld",
+            "muddialogue:bindingIsUnique": true,
+            "muddialogue:bindingToType": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#Character"
+        },
+        {
             "@id": "_:param_character_jsonld",
             "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/muddialogue.ttl#InkVariableBinding",
             "muddialogue:inkVariableName": "param_character_jsonld",
             "muddialogue:bindingIsUnique": true,
+            "muddialogue:bindingToType": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#Character",
             "muddialogue:bindingMadeToShape": {
                 "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/mudfantasy/vampires.ttl#202304ParisVampire",
                 "@type": [
