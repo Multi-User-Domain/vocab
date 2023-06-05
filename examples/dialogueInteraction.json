@@ -23,53 +23,44 @@
             "muddialogue:bindingIsUnique": true,
             "muddialogue:bindingToType": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#Character",
             "muddialogue:bindingMadeToShape": {
-                "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/mudfantasy/vampires.ttl#202304ParisVampire",
-                "@type": [
-                    "http://www.w3.org/ns/shacl#NodeShape"
-                  ],
-                  "http://www.w3.org/ns/shacl#property": [
-                    {
-                        "@id": "_:ub2bL10C17",
-                        "http://www.w3.org/ns/shacl#description": [
-                            {
-                            "@value": "Must have one species of vampire"
-                            }
-                        ],
-                        "http://www.w3.org/ns/shacl#in": [
-                            {
-                            "@list": [
-                                {
-                                "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#Vampire"
-                                },
-                                {
-                                "@value": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#Vampire"
-                                }
-                            ]
-                            }
-                        ],
-                        "http://www.w3.org/ns/shacl#minCount": [
-                            {
-                            "@value": 1
-                            }
-                        ],
-                        "http://www.w3.org/ns/shacl#name": [
-                            {
-                            "@value": "Species"
-                            }
-                        ],
-                        "http://www.w3.org/ns/shacl#path": [
-                            {
-                            "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#species"
-                            }
-                        ]
-                    }
-                  ],
-                  "http://www.w3.org/ns/shacl#targetClass": [
-                    {
-                      "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#Character"
-                    }
-                  ]
-            }
+              "@context": {
+                  "mud": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#",
+                  "schema": "http://schema.org/",
+                  "sh": "http://www.w3.org/ns/shacl#"
+              },
+              "@graph": [
+                  {
+                      "@id": "_:g0",
+                      "sh:description": "Must have one species of vampire",
+                      "sh:in": {
+                          "@list": [
+                              {
+                                  "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#Vampire"
+                              },
+                              "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#Vampire"
+                          ]
+                      },
+                      "sh:minCount": {
+                          "@type": "http://www.w3.org/2001/XMLSchema#integer",
+                          "@value": "1"
+                      },
+                      "sh:name": "Species",
+                      "sh:path": {
+                          "@id": "mud:species"
+                      }
+                  },
+                  {
+                      "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/mudfantasy/vampires.ttl#202304ParisVampire",
+                      "@type": "sh:NodeShape",
+                      "sh:property": {
+                          "@id": "_:g0"
+                      },
+                      "sh:targetClass": {
+                          "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#Character"
+                      }
+                  }
+              ]
+          }
         }
     ],
     "muddialogue:generateNarrativeContextEndpoint": "https://api.realm.games.coop/ud/generateContext/"
