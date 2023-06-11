@@ -47,6 +47,7 @@ twt2023:generatesCardFrom a rdf:Property ;
 #    rdfs:comment "Where the card is generated to. Expected to be a player, i.e. into my deck or that of my opponent"@en ;
 #    rdfs:domain mudlogic:Action .
 
+# TODO: replace below with mudlogic property
 twt2023:maximumUses a rdf:Property ;
     rdfs:label "maximumUses"@en ;
     rdfs:comment "Indicates that an action can only be used a certain number of times"@en ;

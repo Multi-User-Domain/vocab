@@ -7,6 +7,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vgo: <http://purl.org/net/videogameontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
 
 @prefix mudacct: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudacct.ttl#> .
 
@@ -25,10 +26,10 @@ mudacct:Account a rdfs:Class ;
     rdfs:label "Multi-User Domain Account"@en ;
     rdfs:comment "The users' account identifies them while they traverse the MUD"@en .
 
-mudacct:CharacterList a rdf:Property ;
+mudacct:characterList a rdf:Property ;
     rdfs:label "characters list"@en ;
     rdfs:label "liste de personnages"@fr ;
     rdfs:comment "a list of the Characters owned by an associated Account"@en ;
     rdfs:comment "une liste de personnages appartenant à un compte"@fr ;
     rdfs:domain mudacct:Account ;
-    rdfs:range ldp:Container .
+    rdfs:range ldp:Container, schema:URL .
