@@ -1,0 +1,73 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+@prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
+@prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
+@prefix mudcard: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcard.ttl#> .
+@prefix mudworld: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudworld.ttl#> .
+
+@prefix maritime: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/common/maritime.ttl#> .
+
+# Vessels
+
+maritime:Vessel a rdfs:Class ;
+    rdfs:subClassOf mud:Locatable ;
+    rdfs:label "Vessel"@en ;
+    rdfs:comment "The base class for any ship"@en .
+
+# Ship titles
+
+maritime:captain a rdf:Property ;
+    rdfs:label "captain"@en ;
+    rdfs:label "capitain"@fr ;
+    rdfs:comment "Indicates the captain of the ship"@en ;
+    rdfs:range mudchar:Character .
+
+maritime:quartermaster a rdf:Propety ;
+    rdfs:label "quartermaster"@en ;
+    rdfs:comment "Indicates the quartermaster of the ship"@en ;
+    rdfs:range mudchar:Character .
+
+maritime:otherOfficers a rdf:property ;
+    rdfs:label "otherOfficers"@en ;
+    rdfs:comment "A container of characters comprising the officers"@en ;
+    rdfs:range ldp:Container .
+
+maritime:otherCrew a rdf:property ;
+    rdfs:label "otherCrew"@en ;
+    rdfs:comment "A container of characters comprising the crew"@en ;
+    rdfs:range ldp:Container .
+
+# Harbours
+
+maritime:Harbour a mud:Locatable ;
+    rdfs:label "Harbour"@en ;
+    rdfs:label "Port"@fr ;
+    rdfs:comment "Specifically a constructed harbour"@en .
+
+maritime:harbourCapacity a rdf:Property ;
+    rdfs:label "harbourCapacity"@en ;
+    rdfs:comment "Indicates that the subject has the capacity for a fixed number of vessels. May be a natural harbour or a constructed one"@en ;
+    rdfs:range xsd:Integer .
+
+# Flags
+
+maritime:Flag a rdfs:Class ;
+    rdfs:label "Flag"@en ;
+    rdfs:label "Drapeau"@fr ;
+    rdfs:comment "A flag used in communication - e.g. loyalty, or a message"@en .
+
+maritime:flyingColours a rdf:Property ;
+    rdfs:label "flyingColours"@en ;
+    rdfs:comment "Indicates the flags being flown by the subject. Intended to be flags indicating loyalty, rather than messages"@en .
+
+maritime:JollyRodger a maritime:Flag ;
+    rdfs:label "Jolly Rodger"@en ;
+    rdfs:comment "The Jolly Rodger is the traditional colours of pirates"@en .

@@ -2,61 +2,73 @@
 
 These vocabularies are created to support Multi User Domain applications and for the Multi User Domain project
 
-## 2D Graphics
+## Core
+
+The main directory contains the core ontologies for any game
+
+### 2D Graphics
 
 Definitions for directing the generation and application of video-game graphics in 2D
 
-## MUD
+### MUD
 
 The core ontology for Multi-User-Domain logic
 
-## MUD Account
+### MUD Account
 
 User data is stored and managed using a standard which leverages this ontology
 
-## MUD World
+### MUD World
 
 An ontology for describing the properties basic to world data
 
-## MUD Buildings
+### MUD Buildings
 
 Describes some sub-types of Building and their properties
 
-## MUD Card
+### MUD Card
 
 Vocabulary containing terms for card games
 
-## MUD Characters
+### MUD Characters
 
 All things to do with Characters, playable or otherwise
 
-## MUD Events
+### MUD Events
 
 An extension of the [time](https://www.w3.org/TR/owl-time/) ontology to provide context for time-bound events in MUD
 
-## MUD Items
+### MUD Items
 
 Common objects and items used in a game world
 
-## MUD Logic
+### MUD Logic
 
 Vocabulary defines Tasks and Actions conducted by agents in a game world
 
-## MUD Content
+### MUD Content
 
 Vocabulary used to describe content displayed to the user in text and image format. A vocabulary ultimately for defining user _perspective_
 
-## MUD Dialogue
+### MUD Dialogue
 
 Vocabulary used in the definitions of decentralised parts of dialogue with characters
 
-## MUD Fantasy
+### MUD Fantasy
 
 Vocabulary containing terms for commonly used fantasy themes
 
-## MUD Combat
+### MUD Combat
 
 Provides definitions for a commonly used combat system mechanics
+
+## Common
+
+The common directory contains ontologies which are expected to be used frequently between games
+
+### Maritime
+
+Contains naval logic - i.e. about ships
 
 # Contributing
 
