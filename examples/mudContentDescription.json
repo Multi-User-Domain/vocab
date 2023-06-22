@@ -1,0 +1,11 @@
+{
+    "@context": {
+        "mudcontent":"https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#",
+        "n": "http://www.w3.org/2006/vcard/ns#"
+    },
+    "@id": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/examples/mudContentDescription.json",
+    "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#Content",
+    "mudcontent:describes": "https://example.com/queenAnnesRevenge/",
+    "mudcontent:hasText": "The Queen Anne's Revenge is an elegant sloop, swift and mouverable",
+    "mudcontent:hasImage": "https://example.com/queenAnnesRevenge/"
+}
