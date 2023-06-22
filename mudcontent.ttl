@@ -58,7 +58,7 @@ mudcontent:describes a rdf:Property ;
   rdfs:label "Describes"@en ;
   rdfs:comment "The owl:Thing which is being described by the Content"@en ;
   rdfs:domain mudcontent:Content ;
-  rdfs:range owl:Thing .
+  rdfs:range owl:Thing, schema:URL .
 
 mudcontent:hasText a rdf:Property ;
   rdfs:label "hasText"@en ;
