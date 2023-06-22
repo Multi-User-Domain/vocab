@@ -72,6 +72,12 @@ mudcontent:hasImage a rdf:Property ;
   rdfs:comment "Image content associated with a Content resource"@en ;
   rdfs:domain mudcontent:Content .
 
+mudcontent:originatesFrom a rdf:Property ;
+  rdfs:label "originatesFrom"@en ;
+  rdfs:comment "Some content can have an origin source - e.g. a sound might be caused by a character who is speaking. Generally, this is for UI purposes of displaying to the player who did something"@en ;
+  rdfs:domain mudcontent:Content ;
+  rdfs:range owl:Thing, schema:URL .
+
 mudcontent:sceneDescriptionEndpoint a rdf:Property ;
     rdfs:label "sceneDescriptionEndpoint"@en ;
     rdfs:comment "The URL where a supported scene description endpoint can be found"@en ;
