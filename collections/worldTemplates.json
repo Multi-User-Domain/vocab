@@ -1,0 +1,36 @@
+[
+    {
+        "@context": {
+            "n": "http://www.w3.org/2006/vcard/ns#",
+            "mud": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud#",
+            "mudchar": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#",
+            "mudlogic": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#",
+            "mudcombat": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#",
+            "mudworld": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudworld.ttl#",
+            "mdo": "https://w3id.org/mdo/structure/"
+        },
+        "@id": "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/world/defaultWorld.json",
+        "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudworld.ttl#Region",
+        "n:fn": "Paneria",
+        "n:hasNote": "A green and empty world",
+        "mudworld:hasRegions": [
+            {
+                "@id": "_:StartingRegion",
+                "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudworld.ttl#Region",
+                "n:fn": "Paneria",
+                "mudworld:hasSubRegions": [
+                    {
+                        "@id": "_:StartingRegionWest",
+                        "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudworld.ttl#Region",
+                        "n:fn": "Paneria North-West"
+                    },
+                    {
+                        "@id": "_:StartingRegionWest",
+                        "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudworld.ttl#Region",
+                        "n:fn": "Paneria North-East"
+                    }
+                ]
+            }
+        ]
+    }
+]
