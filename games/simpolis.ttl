@@ -27,3 +27,26 @@ simpolis:hasActiveProblems a rdf:Property ;
     rdfs:label "hasActiveProblems"@en ;
     rdfs:comment "Indicates that the subject has a set of problems to solve"@en ;
     rdfs:range ldp:Container .
+
+# Generating Problems
+# Problems are generated either as needs or goals
+# Needs should be prioritised, and are permanent fixtures
+
+simpolis:ProblemGenerationInstruction a rdfs:Class ;
+    rdfs:label "ProblemGenerationInstruction"@en ;
+    rdfs:comment "Includes terms describing how to find new problems for an AI"@en .
+
+simpolis:generateProblemEndpoint a rdf:Property ;
+    rdfs:label "generateProblemEndpoint"@en ;
+    rdfs:comment "Indicates the URL where problems can be generated"@en ;
+    rdfs:domain simpolis:ProblemGenerationInstruction ;
+    rdfs:range schema:URL .
+
+simpolis:hasNeeds a rdf:Property ;
+    rdfs:label "hasNeeds"@en ;
+    rdfs:comment "the subject has a container of ProblemGenerationInstructions which relates to their core needs"@en ;
+    rdfs:range ldp:Container .
+
+# TODO: Modelling goals and goal achievement
+# Goals are distinct from mud:Quest, because they are for generating Problems (behaviours)
+# If the AI is conducting a Quest without human aid, they might model a component of a Quest as a Goal
