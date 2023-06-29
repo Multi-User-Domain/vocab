@@ -34,7 +34,7 @@
                 "@id": "_:StartingRegion",
                 "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudworld.ttl#Region",
                 "n:fn": "Paneria",
-                "mudworld:hasSubRegions": [
+                "mudworld:hasRegions": [
                     {
                         "@id": "_:StartingRegionWest",
                         "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudworld.ttl#Region",

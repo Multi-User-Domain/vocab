@@ -42,20 +42,6 @@ mudworld:Terrain a rdfs:Class ;
     rdfs:comment "Represents a type of terrain on a map (e.g. grass, lava)"@en ;
     rdfs:comment "Signifie un genre du terrain sur la carte (e.g. herbe, lave)"@fr .
 
-mudworld:subRegionOf a rdf:Property ;
-    rdfs:label "subRegionOf"@en ;
-    rdfs:comment "Indicates the region is nested within the target region"@en ;
-    rdfs:comment "Indique que la région est imbriquée dans la région cible"@fr ;
-    rdfs:domain mudworld:Region ;
-    rdfs:range mudworld:Region .
-
-mudworld:hasSubRegion a rdf:Property ;
-    rdfs:label "hasSubRegion"@en ;
-    rdfs:comment "Indicates the target region is nested within this region"@en ;
-    rdfs:comment "Indique que la région cible est imbriquée dans cette région"@fr ;
-    rdfs:domain mudworld:Region ;
-    rdfs:range mudworld:Region .
-
 mudworld:hasRegions a rdf:Property ;
     rdfs:label "hasRegions"@en ;
     rdfs:comment "An ldp:Container defining the sub regions contained within this region. Considered to be a complete set"@en ;
