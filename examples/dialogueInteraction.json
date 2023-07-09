@@ -7,6 +7,7 @@
     "@type":"https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/muddialogue.ttl#Interaction",
     "n:fn": "Vampire Encounter",
     "n:hasNotes": "An encounter with a vampire",
+    "muddialogue:languageCode": "en",
     "muddialogue:inkFile":"https://calum.inrupt.net/public/utopian-dialogue/demoInteraction.ink.json",
     "muddialogue:hasBindings": [
         {

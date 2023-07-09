@@ -35,6 +35,11 @@ muddialogue:inkFile a rdf:Property ;
     rdfs:comment "Ink is a syntax for writing a script for an interaction"@en ;
     rdfs:range schema:URL .
 
+muddialogue:languageCode a rdf:Property ;
+    rdfs:label "languageCode"@en ;
+    rdfs:comment "The language code the content is in. For example 'en'"@en ;
+    rdfs:range xsd:string .
+
 # NOTE: for deciding whether an interaction can be used in a scene, we can use shapes.
 # To model this use the property mudlogic:parameterConstraintsShape
 
