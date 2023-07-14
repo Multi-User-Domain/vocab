@@ -1,0 +1,27 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vgo: <http://purl.org/net/videogameontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+@prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
+@prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
+@prefix mudfantasy: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#> .
+
+@prefix mudcharshapes: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/core/mudchar.ttl#> .
+
+mudcharshapes:Character a sh:NodeShape ;
+    sh:targetClass mudchar:Character ;
+    sh:property [
+        # a Character is not obliged to have a species
+		sh:path mud:species ;
+		sh:class mud:Species, wd:Q16521
+	] .
+
+# TODO: adding senses
+# TODO: adding card mechanics
