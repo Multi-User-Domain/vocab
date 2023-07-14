@@ -4,14 +4,34 @@
 @prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
 @prefix mudfantasy: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#> .
 
+@prefix mudcharshapes: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/core/mudchar.ttl#> .
 @prefix vampireshapes: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/mudfantasy/vampires.ttl#> .
 
 vampireshapes:202304ParisVampire a sh:NodeShape ;
     sh:targetClass mudchar:Character ;
-    sh:property [
+    rdfs:subClassOf mudcharshapes:Character ;
+    sh:property 
+    [
+        sh:name "Name" ;
+        sh:description "A Character must have exactly one name (for now)" ;
+        sh:path n:fn ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ,
+    [
+        sh:name "Gender" ;
+        sh:description "A Character must have exactly one gender (for now)" ;
+        sh:path n:hasGender ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ( n:Male, n:Female, n:Other, n:None ) ;
+    ] ,
+    [
 		sh:name "Species" ;
         sh:description "Must have one species of vampire" ;
 		sh:path mud:species ;
         sh:minCount 1 ;
         sh:in ( mudfantasy:Vampire "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#Vampire" ) ;
 	] .
+
+    # TODO: form the vampire is transformed into ("mudfantasy:isTransformedInto": "https://www.wikidata.org/entity/Q1142526")
