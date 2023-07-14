@@ -17,9 +17,26 @@
 
 mudcharshapes:Character a sh:NodeShape ;
     sh:targetClass mudchar:Character ;
-    sh:property [
-        # a Character is not obliged to have a species
+    sh:property 
+    [
+        sh:name "Name" ;
+        sh:description "A Character must have exactly one name (for now)" ;
+        sh:path n:fn ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ,
+    [
+        sh:name "Gender" ;
+        sh:description "A Character must have exactly one gender (for now)" ;
+        sh:path n:hasGender ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ( n:Male, n:Female, n:Other, n:None ) ;
+    ] ,
+    [
 		sh:path mud:species ;
+        sh:name "Species" ;
+        sh:description "a Character is not obliged to have a species" ;
 		sh:class mud:Species, wd:Q16521
 	] .
 

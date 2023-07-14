@@ -12,21 +12,6 @@ vampireshapes:202304ParisVampire a sh:NodeShape ;
     rdfs:subClassOf mudcharshapes:Character ;
     sh:property 
     [
-        sh:name "Name" ;
-        sh:description "A Character must have exactly one name (for now)" ;
-        sh:path n:fn ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-    ] ,
-    [
-        sh:name "Gender" ;
-        sh:description "A Character must have exactly one gender (for now)" ;
-        sh:path n:hasGender ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:in ( n:Male, n:Female, n:Other, n:None ) ;
-    ] ,
-    [
 		sh:name "Species" ;
         sh:description "Must have one species of vampire" ;
 		sh:path mud:species ;
