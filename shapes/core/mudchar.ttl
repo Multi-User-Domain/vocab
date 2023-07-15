@@ -27,9 +27,8 @@ mudcharshapes:Character a sh:NodeShape ;
     ] ,
     [
         sh:name "Gender" ;
-        sh:description "A Character must have exactly one gender (for now)" ;
+        sh:description "A Character must have maximum one gender (for now)" ;
         sh:path n:hasGender ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:in ( n:Male, n:Female, n:Other, n:None ) ;
     ] ,
