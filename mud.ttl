@@ -55,6 +55,19 @@ mud:sceneGenerationEndpoint a rdf:Property ;
     rdfs:domain mud:Configuration ;
     rdfs:range schema:URL .
 
+# Configurations for Creator Tooling
+
+mud:Form a rdfs:Class ;
+    rdfs:label "Form"@en ;
+    rdfs:comment "Used by applications which allow the user to publish content. Links shapes and other instructions for rendering a form"@en .
+
+mud:creationShapes a rdf:Property ;
+    rdfs:label "creationShapes"@en ;
+    rdfs:comment "The URLs for Shape graphs which compose a form"@en ;
+    rdfs:range ldp:Container .
+
+# World concepts
+
 mud:Organization a rdfs:Class ;
     rdfs:subClassOf foaf:Organization ;
     rdfs:label "Organization"@en ;
