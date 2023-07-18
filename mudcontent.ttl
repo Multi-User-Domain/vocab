@@ -33,6 +33,26 @@ mudcontent:Sight a mudcontent:Sense ;
   rdfs:comment "The visual sense" @en ;
   rdfs:subClassOf mudcontent:Sense .
 
+mudcontent:Hearing a mudcontent:Sense ;
+  rdfs:label "Hearing"@en ;
+  rdfs:comment "The auditry sense" @en ;
+  rdfs:subClassOf mudcontent:Sense .
+
+mudcontent:Smell a mudcontent:Sense ;
+  rdfs:label "Smell"@en ;
+  rdfs:comment "The nasal sense"@en ;
+  rdfs:subClassOf mudcontent:Sense .
+
+mudcontent:Taste a mudcontent:Sense ;
+  rdfs:label "Taste"@en ;
+  rdfs:comment "The gastronomic sense"@en ;
+  rdfs:subClassOf mudcontent:Sense .
+
+mudcontent:Touch a mudcontent:Sense ;
+  rdfs:label "Touch"@en ;
+  rdfs:comment "The sensation of physical touch"@en ;
+  rdfs:subClassOf mudcontent:Sense .
+
 mudcontent:usesSense a rdf:Property ;
   rdfs:label "usesSense"@en ;
   rdfs:comment "Implies that the subject (Content) uses this Sense"@en ;
@@ -44,8 +64,23 @@ mudcontent:hasSense a rdf:Property ;
   rdfs:range mudcontent:Sense .
 
 mudcontent:sees a rdf:Property ;
-  rdfs:label "Sees"@en ;
+  rdfs:label "sees"@en ;
   rdfs:comment "The visual sense of the perceiver"@en ;
+  rdfs:range mud:Content .
+
+mudcontent:hears a rdf:Property ;
+  rdfs:label "hears"@en ;
+  rdfs:comment "The auditry sense of the perceiver"@en ;
+  rdfs:range mud:Content .
+
+mudcontent:smells a rdf:Property ;
+  rdfs:label "smells"@en ;
+  rdfs:comment "The nasal sense of the perceiver"@en ;
+  rdfs:range mud:Content .
+
+mudcontent:perceives a rdf:Property ;
+  rdfs:label "perceives"@en ;
+  rdfs:comment "Generic perception (for all 'other' senses)"@en ;
   rdfs:range mud:Content .
 
 mudcontent:senseStrength a rdf:Property ;
