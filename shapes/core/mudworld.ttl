@@ -1,0 +1,30 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+@prefix mudworld: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudworld.ttl#> .
+
+@prefix mudworldshapes: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/core/mudworld.ttl#> .
+
+mudworldshapes:Region a sh:NodeShape ;
+    sh:targetClass mudworld:Region ;
+    sh:property 
+    [
+        sh:name "Name" ;
+        sh:description "Must have exactly one name (for now)" ;
+        sh:path n:fn ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ,
+    [
+        sh:name "Description" ;
+        sh:description "A Character can have one basic description" ;
+        sh:path n:hasNote ;
+        sh:maxCount 1 ;
+    ] ,
+    [
+        sh:name "Sub-Regions" ;
+        sh:description "A world can have many regions of type mudworld:Region" ;
+        sh:path mudworld:hasRegions ;
+        sh:class mudworld:Region ;
+    ] .
