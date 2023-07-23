@@ -7,7 +7,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 
-@prefix mudcontent: <#> .
+@prefix mudcontent: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#> .
 
 mudcontent: rdf:type owl:Ontology ;
     # Description
@@ -58,10 +58,10 @@ mudcontent:usesSense a rdf:Property ;
   rdfs:comment "Implies that the subject (Content) uses this Sense"@en ;
   rdfs:range mudcontent:Sense .
 
-mudcontent:hasSense a rdf:Property ;
+mudcontent:hasSenses a rdf:Property ;
   rdfs:label "hasSense"@en ;
   rdfs:comment "Connects a Sense to its' perceiver"@en ;
-  rdfs:range mudcontent:Sense .
+  rdfs:range ldp:Container .
 
 mudcontent:sees a rdf:Property ;
   rdfs:label "sees"@en ;
