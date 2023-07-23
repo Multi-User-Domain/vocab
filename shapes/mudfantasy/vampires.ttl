@@ -1,5 +1,5 @@
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
 @prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
 @prefix mudfantasy: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#> .
