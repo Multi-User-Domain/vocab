@@ -1,0 +1,26 @@
+[
+    {
+        "@context": {
+            "mud": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#",
+            "n": "http://www.w3.org/2006/vcard/ns#"
+        },
+        "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#Form",
+        "n:fn": "Character",
+        "n:hasNote": "The base class of mudchar:Character",
+        "mud:creationShapes": [
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/core/mudchar.ttl#Character"
+        ]
+    },
+    {
+        "@context": {
+            "mud": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#",
+            "n": "http://www.w3.org/2006/vcard/ns#"
+        },
+        "@type": "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#Form",
+        "n:fn": "Vampire (Character)",
+        "n:hasNote": "An extension of the base character class for Vampire characters",
+        "mud:creationShapes": [
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/mudfantasy/vampires.ttl#202304ParisVampire"
+        ]
+    }
+]
