@@ -1,17 +1,16 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix time: <http://www.w3.org/2006/time#> .
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix vgo: <http://purl.org/net/videogameontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix mud: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#> .
+@prefix mudcontent: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#> .
 @prefix mudlogic: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudlogic.ttl#> .
 @prefix mudchar: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudchar.ttl#> .
-@prefix mudfantasy: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudfantasy.ttl#> .
+@prefix mudcombat: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#> .
+@prefix mudcard: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcard.ttl#> .
+@prefix twt2023: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/games/twt2023.ttl#> .
 
 @prefix mudcharshapes: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/shapes/core/mudchar.ttl#> .
 
@@ -26,18 +25,196 @@ mudcharshapes:Character a sh:NodeShape ;
         sh:maxCount 1 ;
     ] ,
     [
+        sh:name "Description" ;
+        sh:description "A Character can have one basic description" ;
+        sh:path n:hasNote ;
+        sh:maxCount 1 ;
+    ] ,
+    [
+        sh:name "Portrait (PNG)" ;
+        sh:description "The URL of a PNG file depicting the character" ;
+        sh:path foaf:depiction ;
+        sh:maxCount 1 ;
+    ] ,
+    [
         sh:name "Gender" ;
         sh:description "A Character must have maximum one gender (for now)" ;
         sh:path n:hasGender ;
+        sh:nodeKind sh:IRI ;
         sh:maxCount 1 ;
-        sh:in ( n:Male, n:Female, n:Other, n:None ) ;
+        sh:in ( n:Male n:Female n:Other n:None ) ;
+    ] ,
+    mudcharshapes:SpeciesProperty ,
+    mudcharshapes:SensesProperty ,
+    mudcharshapes:HPProperty ,
+    mudcharshapes:AvailableInstantActionsProperty ,
+    mudcharshapes:DefenceRollsProperty .
+
+mudcharshapes:SpeciesProperty
+    sh:path mud:species ;
+    sh:name "Species" ;
+    sh:description "A Character is not obliged to have a species" ;
+    sh:maxCount 1 ;
+    # TODO: https://github.com/ULB-Darmstadt/shacl-form/issues/4
+    # sh:class ( mud:Species wd:Q16521 ) .
+    sh:class mud:Species .
+
+# TODO: Species referring to @id presents a problem: what is the sh:path?
+
+mudcharshapes:Species a sh:NodeShape ;
+    sh:targetClass mud:Species ;
+    sh:property [
+        sh:name "@id" ;
+        sh:description "Enter the urlid of the desired species" ;
+        sh:defaultValue "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mud.ttl#Human" ;
+        # TODO: https://github.com/ULB-Darmstadt/shacl-form/issues/3
+        # sh:minCount 1 ;
+        # sh:maxCount 1 ;
+    ] .
+
+mudcharshapes:SensesProperty
+    sh:path mudcontent:hasSenses ;
+    sh:name "Sense" ;
+    sh:description "A Character can have different senses (e.g. blindness, nightvision)" ;
+    sh:class mudcontent:Sense .
+
+mudcharshapes:Sense a sh:NodeShape ;
+    sh:targetClass mudcontent:Sense ;
+    sh:property
+    [
+        sh:name "Sense" ;
+        # TODO: make a new property for this?
+        sh:path mudcontent:usesSense ;
+        # TODO: supporting custom sense subclasses by using an @id field, like with Species?
+        sh:in (
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#Sight"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#Hearing"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#Smell"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#Taste"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcontent.ttl#Touch"
+        ) ;
+        # TODO: https://github.com/ULB-Darmstadt/shacl-form/issues/3
     ] ,
     [
-		sh:path mud:species ;
-        sh:name "Species" ;
-        sh:description "a Character is not obliged to have a species" ;
-		sh:class mud:Species, wd:Q16521
-	] .
+        sh:name "Sense Strength" ;
+        sh:description "How sensitive the sense is to information generally. E.g. 1 is normal for a human" ;
+        sh:path mudcontent:senseStrength ;
+    ] .
 
-# TODO: adding senses
-# TODO: adding card mechanics
+# card mechanics
+
+mudcharshapes:HPProperty
+    sh:path mudcombat:hasHealthPoints ;
+    sh:name "Health Points" ;
+    sh:description "In many games a character will have Health Points. 10 should be considered a level 1 amount" ;
+    sh:class mudcombat:HealthPoints ;
+    sh:minCount 1 ;
+    sh:maxCount 1 .
+
+mudcharshapes:HealthPoints a sh:NodeShape ;
+    sh:targetClass mudcombat:HealthPoints ;
+    sh:property [
+        sh:name "Maximum Health Points" ;
+        sh:path mudcombat:maximumP ;
+        sh:datatype xsd:Integer ;
+    ] .
+
+# TODO: dropdown but also allow other values?
+mudcharshapes:AvailableInstantActionsProperty
+    sh:path mudcard:hasAvailableInstantActions ;
+    sh:name "Available Actions" ;
+    sh:description "For example, attacks or other moves which can be made in a turn-based game" ;
+    sh:in (
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/basicAttack.json"
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/fireAttack.json"
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/heavyAttack.json"
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/leechAttack.json"
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/poisonAttack.json"
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/waterAttack.json"
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/generateCard.json"
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/generateWingedParasite.json"
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/regenSelf.json"
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/healingWord.json"
+        "https://raw.githubusercontent.com/Multi-User-Domain/games-transformed-jam-2023/assets/rdf/actions/healParty.json"
+    ) .
+
+mudcharshapes:ResistancesProperty
+    sh:path mudcombat:hasResistances ;
+    sh:name "Damage Resistance" ;
+    sh:description "Resistances to kinds of attack damage" ;
+    sh:class mudcombat:DamageResistance .
+
+mudcharshapes:DamageResistance a sh:NodeShape ;
+    sh:targetClass mudcombat:DamageResistance ;
+    sh:property 
+    [
+        sh:name "Resistance type" ;
+        sh:path mudcombat:resistsDamageType ;
+        sh:in (
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#PhysicalDamage"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#FireDamage"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#EarthDamage"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#WaterDamage"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#AirDamage"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#RadiantDamage"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#NecraticDamage"
+            "https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/mudcombat.ttl#PoisonDamage"
+        ) ;
+        # TODO: https://github.com/ULB-Darmstadt/shacl-form/issues/3
+        # sh:minCount 1 ;
+        # sh:maxCount 1 ;
+    ] ,
+    [
+        sh:name "Resistance Value" ;
+        sh:description "The percentage of damage resisted (negative values incur weakness)" ;
+        sh:path mudcombat:resistanceValue ;
+        sh:datatype xsd:Decimal ;
+        # TODO: https://github.com/ULB-Darmstadt/shacl-form/issues/3
+        # sh:minCount 1 ;
+        # sh:maxCount 1 ;
+    ] .
+
+mudcharshapes:DefenceRollsProperty
+    sh:path mudcombat:hasDefenceRolls ;
+    sh:name "Defence Rolls" ;
+    sh:description "Methods which a character can avoid damage" ;
+    sh:class mudcombat:DefenceRoll .
+
+mudcharshapes:DefenceRoll a sh:NodeShape ;
+    sh:targetClass mudcombat:DefenceRoll ;
+    sh:property 
+    [
+        sh:name "Name" ;
+        sh:description "A Character must have exactly one name (for now)" ;
+        sh:path n:fn ;
+        # TODO: https://github.com/ULB-Darmstadt/shacl-form/issues/3
+        # sh:minCount 1 ;
+        # sh:maxCount 1 ;
+    ] ,
+    [
+        sh:name "Description" ;
+        sh:description "A Character can have one basic description" ;
+        sh:path n:hasNote ;
+        # TODO: https://github.com/ULB-Darmstadt/shacl-form/issues/3
+        # sh:maxCount 1 ;
+    ] ,
+    [
+        sh:name "Resistance Value" ;
+        sh:description "The percentage of damage resisted upon success" ;
+        sh:path mudcombat:resistanceValue ;
+        sh:datatype xsd:Decimal ;
+        # TODO: https://github.com/ULB-Darmstadt/shacl-form/issues/3
+        # sh:minCount 1 ;
+        # sh:maxCount 1 ;
+    ] ,
+    [
+        sh:name "Success Rate" ;
+        sh:description "Probability of success" ;
+        sh:path mudcombat:defenceRollSuccessRate ;
+        # TODO: https://github.com/ULB-Darmstadt/shacl-form/issues/3
+        # sh:minCount 1 ;
+        # sh:maxCount 1 ;
+        sh:datatype xsd:Decimal ;
+    ] .
+
+# TODO: twt2023:hasAvailableEvents
