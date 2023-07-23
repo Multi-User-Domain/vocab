@@ -135,7 +135,6 @@ mud:questImportance a rdf:Property ;
     rdfs:label "Quest Importance"@en ;
     rdfs:label "Importance du Quête"@fr ;
     rdfs:comment "How important the quest is to its' holder. The higher the value the more important"@en ;
-    rdfs:domain mud:Quest ;
     rdfs:range xsd:integer .
 
 # TODO: write a guide on quest conclusions. This could be a string description, success or failure, or a link to something more complex
@@ -161,6 +160,16 @@ mud:questDateTimeLimit a rdf:Property ;
     rdfs:comment "The date/time the holder must have completed the quest by in order to succeed"@en ;
     rdfs:domain mud:Quest ;
     rdfs:range xsd:datetime .
+
+mud:QuestObjective a rdfs:Class ;
+    rdfs:label "Quest Objective"@en ;
+    rdfs:label "Tâche Composant de Quête"@fr ;
+    rdfs:comment "A composant part of a Quest, a short-term goal"@en .
+
+mud:hasObjectives a rdf:Property ;
+    rdfs:label "hasObjectives"@en ;
+    rdfs:comment "The subject (typically a Quest) has an ordered list of quest objectives"@en ;
+    rdfs:range ldp:Container .
 
 mud:hasActiveQuests a rdf:Property ;
     rdfs:label "hasActiveQuests"@en ;
