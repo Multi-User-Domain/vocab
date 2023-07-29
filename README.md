@@ -64,7 +64,11 @@ Provides definitions for a commonly used combat system mechanics
 
 ## Common
 
-The common directory contains ontologies which are expected to be used frequently between games
+The common directory contains ontologies which are expected to be used frequently between games, and reusable utilities
+
+### Shape Conform
+
+Defines Utilities for testing that objects conform to shapes, in various contexts
 
 ### Maritime
 

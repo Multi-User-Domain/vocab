@@ -1,0 +1,35 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+@prefix shconform: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/common/shapeconform.ttl#> .
+
+shconform: rdf:type owl:Ontology ;
+    # Description
+    dcterms:title "Shape Conform" ;
+    dcterms:description """
+    Defines Utilities for testing that objects conform to shapes, in various contexts
+    """ ;
+    # Ownership
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:creator <https://calum.inrupt.net/profile/card#me> .
+
+shconform:ShapeConformObj a rdfs:Class ;
+    rdfs:label "Shape Conformance Object"@en ;
+    rdfs:comment "A useful structure for modelling that an object conforms to a shape, e.g. for the situation 'this quest is completed when the linked object conforms to the linked shape'"@en .
+
+shconform:targetObj a rdf:Property ;
+    rdfs:label "Target object"@en ;
+    rdfs:label "Objet ciblé"@fr ;
+    rdfs:comment "The "@en ;
+    rdfs:domain shconform:ShapeConformObj ;
+    rdfs:range schema:URL .
+
+shconform:targetShape a rdf:Property ;
+    rdfs:label "Target Shape"@en ;
+    rdfs:label "Shape ciblée"@fr ;
+    rdfs:comment ""@en ;
+    shconform:ShapeConformObj ;
+    rdfs:range sh:NodeShape .
