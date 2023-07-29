@@ -166,6 +166,12 @@ mud:QuestObjective a rdfs:Class ;
     rdfs:label "Tâche Composant de Quête"@fr ;
     rdfs:comment "A composant part of a Quest, a short-term goal"@en .
 
+mud:objectiveCompletedConformShape a rdf:Property ;
+    rdfs:label "objectiveCompletedConformShape"@en ;
+    rdfs:comment "The objective is considered completed when the given conditions are met (a container of shconform:ShapeConformObj objects"@en ;
+    rdfs:domain mud:Quest ;
+    rdfs:range ldp:Container .
+
 mud:hasObjectives a rdf:Property ;
     rdfs:label "hasObjectives"@en ;
     rdfs:comment "The subject (typically a Quest) has an ordered list of quest objectives"@en ;
