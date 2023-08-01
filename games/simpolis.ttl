@@ -1,6 +1,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
 @prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -15,23 +16,6 @@
 
 @prefix simpolis: <https://raw.githubusercontent.com/Multi-User-Domain/vocab/main/games/simpolis.ttl#> .
 
-# A simple AI model for automated behaviour where the AI is given regular problems to solve
-
-simpolis:Problem a rdfs:Class ;
-    rdfs:label "Problem"@en ;
-    rdfs:label "Problema"@es ;
-    rdfs:label "Problème"@fr ;
-    rdfs:comment "Models a problem that the AI needs to solve"@en .
-
-simpolis:hasActiveProblems a rdf:Property ;
-    rdfs:label "hasActiveProblems"@en ;
-    rdfs:comment "Indicates that the subject has a set of problems to solve"@en ;
-    rdfs:range ldp:Container .
-
-# Generating Problems
-# Problems are generated either as needs or goals
-# Needs should be prioritised, and are permanent fixtures
-
 simpolis:ProblemGenerationInstruction a rdfs:Class ;
     rdfs:label "ProblemGenerationInstruction"@en ;
     rdfs:comment "Includes terms describing how to find new problems for an AI"@en .
@@ -42,11 +26,34 @@ simpolis:generateProblemEndpoint a rdf:Property ;
     rdfs:domain simpolis:ProblemGenerationInstruction ;
     rdfs:range schema:URL .
 
-simpolis:hasNeeds a rdf:Property ;
-    rdfs:label "hasNeeds"@en ;
-    rdfs:comment "the subject has a container of ProblemGenerationInstructions which relates to their core needs"@en ;
+#
+#   Needs: a system for needs which are actively maintained, like hunger, as opposed to requirements like oxygen
+#
+
+simpolis:Need a rdfs:Class ;
+    rdfs:label "Need"@en ;
+    rdfs:comment "A value which will deteriorate over time and needs to be maintained by a character"@en .
+
+simpolis:needValue a rdf:Property ;
+    rdfs:label "needValue"@en ;
+    rdfs:comment "A decimal representing the percentage the need is met"@en ;
+    rdfs:domain simpolis:Need ;
+    rdfs:range xsd:Decimal .
+
+# need functions from the perspective of the subject using them
+
+simpolis:hasMetNeeds a rdf:Property ;
+    rdfs:label "hasMetNeeds"@en ;
+    rdfs:comment "the subject has a container of Needs which are being maintained effectively"@en ;
     rdfs:range ldp:Container .
 
-# TODO: Modelling goals and goal achievement
-# Goals are distinct from mud:Quest, because they are for generating Problems (behaviours)
-# If the AI is conducting a Quest without human aid, they might model a component of a Quest as a Goal
+# TODO: need deterioration consequences
+
+simpolis:hasEmergencyNeeds a rdf:Property ;
+    rdfs:label "hasEmergencyNeeds"@en ;
+    rdfs:comment "the subject has a container of Needs which are not being met to the extent that they are in danger"@en ;
+    rdfs:range ldp:Container .
+
+# core game Needs
+
+simpolis:Hunger a simpolis:Need .
