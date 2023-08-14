@@ -175,3 +175,9 @@ mudlogic:hasOngoingTask a rdf:Property ;
     rdfs:label "hasOngoingTask"@en ;
     rdfs:comment "a mudlogic:Task that a Thing is pre-occupied with" ;
     rdfs:range mudlogic:Task .
+
+mudlogic:changesTriggeredOnEntry a rdf:Property ;
+    rdfs:label "changesTriggeredOnEntry"@en ;
+    rdfs:comment "Intended for buildings. Triggers scene changes when the player enters (mudlogic:Operation )"@en ;
+    # a container of mudlogic:Operations
+    rdfs:range ldp:Container .
