@@ -15,5 +15,9 @@
 spshapes:HungerSatisfied a sh:NodeShape ;
     sh:targetClass mudchar:Character ;
     sh:property [
-
+        sh:name "Hunger met" ;
+        sh:description "A Character has hunger in their met needs" ;
+        sh:path simpolis:hasMetNeeds ;
+        sh:minCount 1 ;
+        sh:hasValue simpolis:Hunger ;
     ] .
