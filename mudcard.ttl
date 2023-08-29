@@ -26,11 +26,6 @@ mudcard: rdf:type owl:Ontology ;
 
 mudcard:playableCard a mud:Specification .
 
-mudcard:description a rdf:Property ;
-    rdfs:label "description"@en ;
-    rdfs:comment "A description indicating what happens when the card is played"@en ;
-    rdfs:range xsd:string .
-
 mudcard:playTarget a rdf:Property ;
     rdfs:label "playTarget"@en ;
     rdfs:comment "Instructs the game how the card should be played (e.g. on a board, on a character, on nothing)"@en .
