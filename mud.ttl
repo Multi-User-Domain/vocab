@@ -82,6 +82,16 @@ mud:Building a mud:Locatable ;
     rdfs:label "Building"@en ;
     rdfs:label "Bâtiment"@fr .
 
+mud:BuildingType a rdfs:Class ;
+    rdfs:label "Building Type"@en ;
+    rdfs:label "Type de Bâtiment"@fr ;
+    rdfs:comment "The social categorisation of a building"@en ;
+    rdfs:comment "La categorisation sociale d'un bâtiment"@fr .
+
+mud:buildingType a rdf:Property ;
+    rdfs:label "buildingType"@en ;
+    rdfs:range mud:BuildingType .
+
 mud:Species a rdfs:Class ;
     rdfs:label "Species"@en ;
     rdfs:label "Espèce"@fr ;

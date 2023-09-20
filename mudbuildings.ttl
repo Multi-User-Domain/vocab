@@ -13,43 +13,41 @@ mudbuildings: rdf:type owl:Ontology ;
     # Description
     dcterms:title "Multi-User Domain Buildings ontology" ;
     dcterms:description """
-    Defines a core library of mud:Building subclasses and properties
+    Defines a core library of mud:BuildingTypes properties
     """ ;
     # Ownership
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
     dcterms:creator <https://calum.inrupt.net/profile/card#me> .
 
-mudbuildings:Agora a mud:Building ;
-    rdfs:subClassOf mud:Building ;
+mudbuildings:Agora a mud:BuildingType ;
     rdfs:label "Agora"@en ;
     rdfs:label "Agora"@fr ;
     rdfs:label "Αγορά"@el .
 
-mudbuildings:Factory a mud:Building ;
-    rdfs:subClassOf mud:Building ;
+mudbuildings:Factory a mud:BuildingType ;
     rdfs:label "Factory"@en ;
     rdfs:label "Manufacture"@fr ;
     rdfs:label "Εργοστάσιο"@el .
 
-mudbuildings:House a mud:Building ;
-    rdfs:subClassOf mud:Building ;
+mudbuildings:House a mud:BuildingType ;
     rdfs:label "House"@en ;
     rdfs:label "Maison"@fr ;
     rdfs:label "Σπίτι"@el .
 
-mudbuildings:Nightclub a mud:Building ;
-    rdfs:subClassOf mud:Building ;
+mudbuildings:Nightclub a mud:BuildingType ;
     rdfs:label "Nightclub"@en ;
     rdfs:label "Boîte de nuit"@fr .
 
-mudbuildings:Prison a mud:Building ;
-    rdfs:subClassOf mud:Building ;
+mudbuildings:Prison a mud:BuildingType ;
     rdfs:label "Prison"@en ;
     rdfs:label "Prison"@fr ;
     rdfs:label "Φυλακή"@el .
 
-mudbuildings:Stadium a mud:Building ;
-    rdfs:subClassOf mud:Building ;
+mudbuildings:Stadium a mud:BuildingType ;
     rdfs:label "Stadium"@en ;
     rdfs:label "Stade"@fr ;
     rdfs:label "Στάδιο"@el .
+
+mudbuildings:Kitchen a mud:BuildingType ;
+    rdfs:label "Kitchen"@en ;
+    rdfs:label "Cuisine"@fr .
