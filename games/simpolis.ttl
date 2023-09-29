@@ -34,11 +34,10 @@ simpolis:Need a rdfs:Class ;
     rdfs:label "Need"@en ;
     rdfs:comment "A value which will deteriorate over time and needs to be maintained by a character"@en .
 
-simpolis:needValue a rdf:Property ;
-    rdfs:label "needValue"@en ;
-    rdfs:comment "A decimal representing the percentage the need is met"@en ;
-    rdfs:domain simpolis:Need ;
-    rdfs:range xsd:Decimal .
+simpolis:orderNeed a rdf:Property ;
+    rdfs:label "orderNeed"@en ;
+    rdfs:comment "Lower order needs will be addressed first (e.g. hunger is at zero). See the Wiki for further explanation"@en ;
+    rdfs:range xsd:Integer .
 
 # need functions from the perspective of the subject using them
 
@@ -56,4 +55,5 @@ simpolis:hasEmergencyNeeds a rdf:Property ;
 
 # core game Needs
 
-simpolis:Hunger a simpolis:Need .
+simpolis:Hunger a simpolis:Need ;
+    simpolis:orderNeed 0 .
