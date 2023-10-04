@@ -95,6 +95,11 @@ mudlogic:hasBinding a rdf:Property ;
     rdfs:comment "Indicates that an action has a binding to a resource (i.e. a parameter, a resource which is involved in the action)"@en ;
     rdfs:range mudlogic:ActionBinding .
 
+mudlogic:hasBindings a rdf:Property ;
+    rdfs:label "hasBindings"@en ;
+    rdfs:comment "Contains bindings used to map game logic to the Interaction represented in Linked Data"@en ;
+    rdfs:range ldp:Container .
+
 mudlogic:boundToShapes a rdf:Property ;
     rdfs:label "boundToShape"@en ;
     rdfs:comment "Indicates a shape constraining which resources can be bound to the given Binding"@en ;
