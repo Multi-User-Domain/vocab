@@ -105,6 +105,11 @@ mudlogic:boundToShapes a rdf:Property ;
     rdfs:comment "Indicates a shape constraining which resources can be bound to the given Binding"@en ;
     rdfs:range ldp:Container .
 
+mudlogic:bindingIsRequired a rdf:Property ;
+    rdfs:label "bindingIsRequired"@en ;
+    rdfs:comment "If true, the action cannot be completed without making the binding"@en ;
+    rdfs:range xsd:boolean .
+
 # The Binding types below define the relationship to the Action
 
 mudlogic:ActorBinding a rdfs:Class ;
