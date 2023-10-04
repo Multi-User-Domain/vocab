@@ -105,17 +105,27 @@ mudlogic:boundToShapes a rdf:Property ;
 mudlogic:ActorBinding a rdfs:Class ;
     rdfs:subClassOf mudlogic:ActionBinding ;
     rdfs:label "Actor Binding"@en ;
-    rdfs:comment "The binding to the actor performing an action. Differentiated to aid a game in finding the right resource for the binding"@en .
+    rdfs:comment "The binding to the actor performing an action."@en .
 
 mudlogic:TargetBinding a rdfs:Class ;
     rdfs:subClassOf mudlogic:ActionBinding ;
     rdfs:label "Target Binding"@en ;
-    rdfs:comment "The binding to a target of a particular action. Differentiated to aid a game in finding the right resource for the binding"@en .
+    rdfs:comment "The binding to a target of a particular action."@en .
 
 mudlogic:WitnessBinding a rdfs:Class ;
     rdfs:subClassOf mudlogic:ActionBinding ;
     rdfs:label "Witness Binding"@en ;
-    rdfs:comment "The binding to a witness to the action performed. Differentiated to aid a game in finding the right resource for the binding"@en .
+    rdfs:comment "The binding to a witness to the action performed."@en .
+
+mudlogic:ConsumedBinding a rdfs:Class ;
+    rdfs:subClassOf mudlogic:ActionBinding ;
+    rdfs:label "ConsumedBinding"@en ;
+    rdfs:comment "Indicates the object bound is a consumable in the recipe of the action. Making the binding a consumable does not mean it will be deleted necessarily, you need to define this in the Patch operations of the Action"@en .
+
+mudlogic:LocationBinding a rdfs:Class ;
+    rdfs:subClassOf mudlogic:ActionBinding ;
+    rdfs:label "Location Binding"@en ;
+    rdfs:comment "The binding to the location where the Action must be performed. Included for example to place restrictions on where an action can be completed."@en .
 
 # modelling graph state changes made by an Action
 
