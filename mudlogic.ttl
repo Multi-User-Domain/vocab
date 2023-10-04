@@ -122,9 +122,9 @@ mudlogic:WitnessBinding a rdfs:Class ;
     rdfs:label "Witness Binding"@en ;
     rdfs:comment "The binding to a witness to the action performed."@en .
 
-mudlogic:ConsumedBinding a rdfs:Class ;
+mudlogic:ConsumableBinding a rdfs:Class ;
     rdfs:subClassOf mudlogic:ActionBinding ;
-    rdfs:label "ConsumedBinding"@en ;
+    rdfs:label "ConsumableBinding"@en ;
     rdfs:comment "Indicates the object bound is a consumable in the recipe of the action. Making the binding a consumable does not mean it will be deleted necessarily, you need to define this in the Patch operations of the Action"@en .
 
 mudlogic:LocationBinding a rdfs:Class ;
