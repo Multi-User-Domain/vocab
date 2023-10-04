@@ -95,8 +95,12 @@ mudlogic:hasBinding a rdf:Property ;
     rdfs:comment "Indicates that an action has a binding to a resource (i.e. a parameter, a resource which is involved in the action)"@en ;
     rdfs:range mudlogic:ActionBinding .
 
-# TODO: instructing a game on how to find a binding using SPARQL
-# (temporarily?) providing sub-types of ActionBinding for this purpose
+mudlogic:boundToShapes a rdf:Property ;
+    rdfs:label "boundToShape"@en ;
+    rdfs:comment "Indicates a shape constraining which resources can be bound to the given Binding"@en ;
+    rdfs:range ldp:Container .
+
+# The Binding types below define the relationship to the Action
 
 mudlogic:ActorBinding a rdfs:Class ;
     rdfs:subClassOf mudlogic:ActionBinding ;
