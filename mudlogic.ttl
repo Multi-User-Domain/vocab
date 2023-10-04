@@ -60,7 +60,7 @@ mudlogic:actAt a rdf:Property ;
 
 mudlogic:parameterConstraintsShape a rdf:Property ;
     rdfs:label "Parameter Constraints Shape"@en ;
-    rdfs:comment "A shape which is used for validating input parameters"@en ;
+    rdfs:comment "A shape which is used for validating input parameters, on the global world state. For example if an action must be performed at night"@en ;
     rdfs:range sh:NodeShape .
 
 mudlogic:recursAfterSeconds a rdf:Property ;
