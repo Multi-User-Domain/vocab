@@ -1,6 +1,6 @@
 # Multi User Domain vocabularies
 
-These vocabularies are created to support Multi User Domain applications and for the Multi User Domain project
+These vocabularies are created to support Multi User Domain applications and for the Multi User Domain project. Below is a short description of each vocabulary included in this repository. For more information on how to use a specific vocabulary, see the docs folder of this repository. For documentation on how to build games within our commons, see https://Multi-User-Domain.github.io/
 
 ## Core
 
