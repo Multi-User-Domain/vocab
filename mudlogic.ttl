@@ -154,18 +154,16 @@ mudlogic:Patch a rdfs:Class ;
     rdfs:label "Patch"@en ;
     rdfs:comment "Attaches resources (via properties inserts and deletes) to be PATCHed during a state change. During a PATCH the referenced resources are not replaced"@en .
 
-# TODO: formally add the constraints described in the property's description
-mudlogic:taskImplements a rdf:Property ;
-    rdfs:label "taskImplements"@en ;
-    rdfs:comment "the Class (subclass of mudLogic:Task) which is implemented by this Task. Mandatory and can only have one value. See https://github.com/Multi-User-Domain/mud-jena/issues/25 for background"@en ;
-    rdfs:domain mudlogic:Task ;
-    rdfs:range rdfs:Class .
-
 mudlogic:isComplete a rdf:Property ;
     rdfs:label "isComplete"@en ;
     rdfs:comment "If True, the task completion conditions have been met and the task has been completed"@en ;
     rdfs:domain mudlogic:Task ;
     rdfs:range xsd:boolean .
+
+mudlogic:progress a rdf:Property ;
+    rdfs:label "progress"@en ;
+    rdfs:comment "A floating point value between 0.0 and 1.0, indicating the amount of progress completed for a given Task"@en ;
+    rdfs:domain mudlogic:Task .
 
 mudlogic:inserts a rdf:Property ;
     rdfs:label "Inserts"@en ;
